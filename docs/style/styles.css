@@ -1,10 +1,5 @@
 /* css styles  008c8c */
 
-strong {
-  color: #008c8c;
-  font-weight: bold;
-}
-
 @font-face {
   font-family: "MyFont";
   src: url("cmunrm.ttf");

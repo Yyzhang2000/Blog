@@ -96,8 +96,8 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-031cd9d97a520988df207bf52eb2c749.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-c78261d34ac147cb369eea006dc2f79f.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-529bc5b808b2cf6743eb3e63d5789c04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-744188698117184b1091d78a20faed7a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -283,18 +283,18 @@ window.Quarto = {
 <p><cite>Deep LearningFoundations and Concepts</cite></p>
 </blockquote>
 <p>The corrupt process is defined as:</p>
-<div id="8da88d39" class="cell">
+<div id="b31c06af" class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> corrupt(x, amount):</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    <span class="co">"""</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">    corrupt the input `x` by mixing it with noise</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">    x: (B, 1, 28, 28)</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">    amount: (B) different amount of noise for different samples</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">    """</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>    noise <span class="op">=</span> torch.rand_like(x)</span>
-<span id="cb1-8"><a href="#cb1-8"></a>    amount <span class="op">=</span> amount.view(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb1-9"><a href="#cb1-9"></a>    <span class="cf">return</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> amount) <span class="op">+</span> noise <span class="op">*</span> amount</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> corrupt(x, amount):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    corrupt the input `x` by mixing it with noise</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    x: (B, 1, 28, 28)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    amount: (B) different amount of noise for different samples</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    noise <span class="op">=</span> torch.rand_like(x)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    amount <span class="op">=</span> amount.view(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> amount) <span class="op">+</span> noise <span class="op">*</span> amount</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>We take a batch of image in, and corrupt the image the according to different level of noise.</p>
@@ -323,29 +323,29 @@ Figure&nbsp;1: Corrupt images with differnt level of noise.
 </figure>
 </div>
 </div></div><p>Now, we got everything we need to trained a neural network, data, model, loss function, let’s start training!!</p>
-<div id="cef3048c" class="cell">
+<div id="b495055a" class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>train_dataloader <span class="op">=</span> DataLoader(dataset, batch_size<span class="op">=</span>batch_size, shuffle<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a>epochs <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>net <span class="op">=</span> UNet()  <span class="co"># This UNet is trained to predict the original image from the corrupted image</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>criterion <span class="op">=</span> nn.MSELoss()</span>
-<span id="cb2-7"><a href="#cb2-7"></a>optimizer <span class="op">=</span> torch.optim.Adam(net.parameters(), lr<span class="op">=</span><span class="fl">1e-3</span>)</span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="cf">for</span> x, _ <span class="kw">in</span> tqdm(train_dataloader):</span>
-<span id="cb2-11"><a href="#cb2-11"></a>        noise_amount <span class="op">=</span> torch.rand(x.shape[<span class="dv">0</span>]) <span class="co"># Random Generate some noise level[0, 1] add to image x</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>        noisy_x <span class="op">=</span> corrupt(x, noise_amount) <span class="co"># Corrput the image</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a>        pred <span class="op">=</span> net(noisy_x) <span class="co"># NN predict what the de-noised image x</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>        loss <span class="op">=</span> criterion(pred, x) <span class="co"># Compare </span></span>
-<span id="cb2-16"><a href="#cb2-16"></a></span>
-<span id="cb2-17"><a href="#cb2-17"></a>        <span class="co"># Optimize</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a>        optimizer.zero_grad()</span>
-<span id="cb2-19"><a href="#cb2-19"></a>        loss.backward()</span>
-<span id="cb2-20"><a href="#cb2-20"></a>        optimizer.step()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(dataset, batch_size<span class="op">=</span>batch_size, shuffle<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>epochs <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>net <span class="op">=</span> UNet()  <span class="co"># This UNet is trained to predict the original image from the corrupted image</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>criterion <span class="op">=</span> nn.MSELoss()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> torch.optim.Adam(net.parameters(), lr<span class="op">=</span><span class="fl">1e-3</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x, _ <span class="kw">in</span> tqdm(train_dataloader):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        noise_amount <span class="op">=</span> torch.rand(x.shape[<span class="dv">0</span>]) <span class="co"># Random Generate some noise level[0, 1] add to image x</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        noisy_x <span class="op">=</span> corrupt(x, noise_amount) <span class="co"># Corrput the image</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        pred <span class="op">=</span> net(noisy_x) <span class="co"># NN predict what the de-noised image x</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        loss <span class="op">=</span> criterion(pred, x) <span class="co"># Compare </span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Optimize</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        optimizer.zero_grad()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        loss.backward()</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        optimizer.step()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>After we trained the model for 10 epochs, we can see that it predict not-bad output.</p>
@@ -360,22 +360,22 @@ Figure&nbsp;2: Result of one pass U-Net model
 </figure>
 </div>
 <p>Though, for the image with higher noise-level(more like Gaussian Distribution), the network perform well. One small trick we can use it to pass the image through model several times. We hope each time, the predicted image will get better.</p>
-<div id="89ca7934" class="cell">
+<div id="e544f0a3" class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>n_steps <span class="op">=</span> <span class="dv">8</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>x <span class="op">=</span> torch.rand(<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">28</span>, <span class="dv">28</span>).to(device)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>step_history <span class="op">=</span> [x.detach().cpu()]</span>
-<span id="cb3-4"><a href="#cb3-4"></a>pred_output_history <span class="op">=</span> []</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_steps):</span>
-<span id="cb3-7"><a href="#cb3-7"></a>    <span class="cf">with</span> torch.no_grad():</span>
-<span id="cb3-8"><a href="#cb3-8"></a>        pred <span class="op">=</span> net(x)</span>
-<span id="cb3-9"><a href="#cb3-9"></a></span>
-<span id="cb3-10"><a href="#cb3-10"></a>    step_history.append(x.detach().cpu())</span>
-<span id="cb3-11"><a href="#cb3-11"></a>    pred_output_history.append(pred.detach().cpu())</span>
-<span id="cb3-12"><a href="#cb3-12"></a>    mix_factor <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (n_steps <span class="op">-</span> i)</span>
-<span id="cb3-13"><a href="#cb3-13"></a>    x <span class="op">=</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> mix_factor) <span class="op">+</span> pred <span class="op">*</span> mix_factor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.rand(<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">28</span>, <span class="dv">28</span>).to(device)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>step_history <span class="op">=</span> [x.detach().cpu()]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>pred_output_history <span class="op">=</span> []</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_steps):</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        pred <span class="op">=</span> net(x)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    step_history.append(x.detach().cpu())</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    pred_output_history.append(pred.detach().cpu())</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    mix_factor <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (n_steps <span class="op">-</span> i)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> mix_factor) <span class="op">+</span> pred <span class="op">*</span> mix_factor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>After we pass the model 8 times, we get the result:</p>
