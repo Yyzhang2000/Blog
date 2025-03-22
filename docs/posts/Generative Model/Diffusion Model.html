@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-17">
+<meta name="dcterms.date" content="2025-03-23">
 <meta name="description" content="This blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.">
 
 <title>Deep Dive into Diffusion Models</title>
@@ -96,7 +96,7 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-84d7a8ef3889528402b2843d79d8b358.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-031cd9d97a520988df207bf52eb2c749.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-c78261d34ac147cb369eea006dc2f79f.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
@@ -178,14 +178,14 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Yuyang’s Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Yuyang’s Blog</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../resource.html"> 
@@ -254,7 +254,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-03-17</p>
+      <p class="date">2025-03-23</p>
     </div>
   </div>
   
@@ -283,7 +283,7 @@ window.Quarto = {
 <p><cite>Deep LearningFoundations and Concepts</cite></p>
 </blockquote>
 <p>The corrupt process is defined as:</p>
-<div id="b9e9d99b" class="cell">
+<div id="8da88d39" class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> corrupt(x, amount):</span>
@@ -323,7 +323,7 @@ Figure&nbsp;1: Corrupt images with differnt level of noise.
 </figure>
 </div>
 </div></div><p>Now, we got everything we need to trained a neural network, data, model, loss function, let’s start training!!</p>
-<div id="42c7926c" class="cell">
+<div id="cef3048c" class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
@@ -360,7 +360,7 @@ Figure&nbsp;2: Result of one pass U-Net model
 </figure>
 </div>
 <p>Though, for the image with higher noise-level(more like Gaussian Distribution), the network perform well. One small trick we can use it to pass the image through model several times. We hope each time, the predicted image will get better.</p>
-<div id="37c910b6" class="cell">
+<div id="89ca7934" class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>n_steps <span class="op">=</span> <span class="dv">8</span></span>
