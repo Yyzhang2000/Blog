@@ -76,8 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-529bc5b808b2cf6743eb3e63d5789c04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-744188698117184b1091d78a20faed7a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b9902b8b739e328556d39c5d5cb9f103.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-27decf38acdae95fb92c2582c7011d91.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,6 +107,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <link href="https://fonts.cdnfonts.com/css/cmu-sans-serif" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../style/styles.css">
 <meta property="og:title" content="What a Generative Models?">
@@ -253,15 +282,19 @@ Figure&nbsp;1: Summary of various kinds of deep generative models. (Image Source
 </figure>
 </div>
 <p>There are 6 types of generative models, as showed in the <a href="#fig-overview-generative-models" class="quarto-xref">Figure&nbsp;1</a>. In this article, we will go through those 6 different types. Get into the details of each different types and compare those models. How to combine those model to get more complex and useful generative models.</p>
-<div id="5932b7a7" class="cell">
-<details class="code-fold">
-<summary>Show the code</summary>
+<div id="8d11d0d3" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello Word"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
 <section id="auto-regressive-models" class="level1">
 <h1>Auto-Regressive Models</h1>
+<div id="thm-line" class="theorem-unnumbered theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Machine Learning)</strong></span> The equation of any straight line, called a linear equation, can be written as:</p>
+<p><span class="math display">\[
+y = mx + b
+\]</span></p>
+</div>
+<p>See <a href="#thm-line" class="quarto-xref">Theorem&nbsp;1</a>.</p>
 </section>
 <section id="variational-infrence-models" class="level1">
 <h1>Variational Infrence Models</h1>
