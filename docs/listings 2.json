@@ -47,12 +47,6 @@
     ]
   },
   {
-    "listing": "/projects.html",
-    "items": [
-      "/projects/StableDiffusion.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/Generative Model/Generative Model Overview.html",
@@ -65,6 +59,14 @@
       "/posts/Gaussian.html",
       "/posts/Generative Model/Diffusion Model.html",
       "/posts/MathToolBox.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/SD_2.html",
+      "/projects/SD_3.html",
+      "/projects/StableDiffusion.html"
     ]
   }
 ]

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-23">
+<meta name="dcterms.date" content="2025-03-26">
 <meta name="description" content="This blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.">
 
 <title>Deep Dive into Diffusion Models</title>
@@ -96,8 +96,8 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b9902b8b739e328556d39c5d5cb9f103.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-27decf38acdae95fb92c2582c7011d91.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-65432e5375e1a532635021ac7c0693ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-761bbc51f0b184db0df0ee6f68078b68.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -191,6 +191,10 @@ window.Quarto = {
     <a class="nav-link" href="../../resource.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Yyzhang2000"> <i class="bi bi-github" role="img">
 </i> 
@@ -254,7 +258,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-03-23</p>
+      <p class="date">2025-03-26</p>
     </div>
   </div>
   
@@ -283,7 +287,7 @@ window.Quarto = {
 <p><cite>Deep LearningFoundations and Concepts</cite></p>
 </blockquote>
 <p>The corrupt process is defined as:</p>
-<div id="300633c4" class="cell">
+<div id="4b349ba5" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> corrupt(x, amount):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    corrupt the input `x` by mixing it with noise</span></span>
@@ -320,7 +324,7 @@ Figure&nbsp;1: Corrupt images with differnt level of noise.
 </figure>
 </div>
 </div></div><p>Now, we got everything we need to trained a neural network, data, model, loss function, let’s start training!!</p>
-<div id="17d79e73" class="cell">
+<div id="72fc12ba" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(dataset, batch_size<span class="op">=</span>batch_size, shuffle<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>epochs <span class="op">=</span> <span class="dv">10</span></span>
@@ -354,7 +358,7 @@ Figure&nbsp;2: Result of one pass U-Net model
 </figure>
 </div>
 <p>Though, for the image with higher noise-level(more like Gaussian Distribution), the network perform well. One small trick we can use it to pass the image through model several times. We hope each time, the predicted image will get better.</p>
-<div id="5ad07495" class="cell">
+<div id="6f79f443" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.rand(<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">28</span>, <span class="dv">28</span>).to(device)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>step_history <span class="op">=</span> [x.detach().cpu()]</span>

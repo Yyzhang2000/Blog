@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-23">
+<meta name="dcterms.date" content="2025-03-26">
 <meta name="description" content="In this blog, I am going to review the most important concept in the AI world">
 
 <title>Reinforcement Learning From Human Feedback</title>
@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -42,8 +62,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b9902b8b739e328556d39c5d5cb9f103.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-27decf38acdae95fb92c2582c7011d91.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-65432e5375e1a532635021ac7c0693ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-761bbc51f0b184db0df0ee6f68078b68.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -135,6 +155,10 @@ window.Quarto = {
     <a class="nav-link" href="../resource.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Yyzhang2000"> <i class="bi bi-github" role="img">
 </i> 
@@ -162,6 +186,17 @@ window.Quarto = {
    
   <ul>
   <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link active" data-scroll-target="#preliminaries">Preliminaries</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#algorithms" id="toc-algorithms" class="nav-link" data-scroll-target="#algorithms">Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#ppo" id="toc-ppo" class="nav-link" data-scroll-target="#ppo">PPO</a></li>
+  </ul></li>
+  <li><a href="#in-llms" id="toc-in-llms" class="nav-link" data-scroll-target="#in-llms">In LLMs</a>
+  <ul class="collapse">
+  <li><a href="#ppo-1" id="toc-ppo-1" class="nav-link" data-scroll-target="#ppo-1">PPO</a></li>
+  <li><a href="#dpo" id="toc-dpo" class="nav-link" data-scroll-target="#dpo">DPO</a></li>
+  <li><a href="#grpo" id="toc-grpo" class="nav-link" data-scroll-target="#grpo">GRPO</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -193,14 +228,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-03-23</p>
+      <p class="date">2025-03-26</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Last modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-03-23</p>
+      <p class="date-modified">2025-03-25</p>
     </div>
   </div>
     
@@ -265,11 +300,77 @@ V_\pi(s) = \mathbb{E}_{a \sim \pi(s)} [Q_\pi(s, a)]
 <p><span id="eq-advantage-define"><span class="math display">\[
 A(s, a) = Q(s, a) - \mathbb{E}[Q(s, a)] = Q(s, a) - V(s)
 \tag{6}\]</span></span></p>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+</section>
+<section id="algorithms" class="level1">
+<h1>Algorithms</h1>
+<section id="ppo" class="level2">
+<h2 class="anchored" data-anchor-id="ppo">PPO</h2>
+</section>
+</section>
+<section id="in-llms" class="level1">
+<h1>In LLMs</h1>
+<div id="fig-rlhf-llm-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rlhf-llm-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://noblecatt-1304922865.cos.ap-singapore.myqcloud.com/202503232157413.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rlhf-llm-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The three steps of RLHF (Image source: Training language models to follow instructions with human feedback)
+</figcaption>
+</figure>
+</div>
+<p>One of the most known application of RLHF is in the post-training of LLMs, where RLHF is used to align the human preference to the model. (If you are not familiar with the LLM, check this <a href="https://yyzhang2000.github.io/Blog/posts/LLM/LLM-Overview.html">blog</a>).</p>
+<p>Let’s first define what is the state, action, in the LLM.</p>
+<ul>
+<li>State <span class="math inline">\(s\)</span>: The prompt or the conversation context</li>
+<li>Action: The model’s generated tokens – typically a full response or the next token in the auto-regressive generation</li>
+<li>Reward: A scalar value that represents human preference or a proxy for it(e.g.&nbsp;output quality, helpfulness, etc.)</li>
+<li>Policy: The language model, usually fine-tuned to maximize expected rewards.</li>
+</ul>
+<section id="ppo-1" class="level2">
+<h2 class="anchored" data-anchor-id="ppo-1">PPO</h2>
+<p>One of the most widely used RL algorithm in the LLM is the PPO, as showed in the <a href="#fig-rlhf-llm-overview" class="quarto-xref">Figure&nbsp;2</a>. Those model mapping the PPO in the</p>
+</section>
+<section id="dpo" class="level2">
+<h2 class="anchored" data-anchor-id="dpo">DPO</h2>
+<p>One the problem of PPO is that, it’s needed another reward model, which is often same size as the our language model. It take large memory and computing resource. Is it possible to get remove the reward model? The answer is YES! According to the <span class="citation" data-cites="rafailovDirectPreferenceOptimization2024">(<a href="#ref-rafailovDirectPreferenceOptimization2024" role="doc-biblioref">Rafailov et al. 2024</a>)</span>, the implicit reward model can be fitting using the language model itself.</p>
+<div id="fig-dpo-process" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dpo-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://noblecatt-1304922865.cos.ap-singapore.myqcloud.com/202503232236952.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dpo-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: DPO process compare to the traditional PPO process (Image Source: Direct Preference Optimization: Your Language Model is Secretly a Reward Model)
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="grpo" class="level2">
+<h2 class="anchored" data-anchor-id="grpo">GRPO</h2>
+<div id="fig-grpo-deepseek-math" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-grpo-deepseek-math-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://noblecatt-1304922865.cos.ap-singapore.myqcloud.com/202503232239112.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-grpo-deepseek-math-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Compare between PPO and GRPO (Image SourcDeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models)e:
+</figcaption>
+</figure>
+</div>
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-rafailovDirectPreferenceOptimization2024" class="csl-entry" role="listitem">
+Rafailov, Rafael, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, and Chelsea Finn. 2024. <span>“Direct <span>Preference Optimization</span>: <span>Your Language Model</span> Is <span>Secretly</span> a <span>Reward Model</span>.”</span> July 29, 2024. <a href="https://doi.org/10.48550/arXiv.2305.18290">https://doi.org/10.48550/arXiv.2305.18290</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
