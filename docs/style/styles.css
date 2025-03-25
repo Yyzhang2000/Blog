@@ -97,20 +97,3 @@ cite {
 cite a:link {
   color: white;
 }
-
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.tag {
-  background-color: #c6f6d5;
-  color: #22543d;
-  font-weight: bold;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-family: Arial, sans-serif;
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
