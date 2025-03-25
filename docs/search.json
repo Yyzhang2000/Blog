@@ -277,7 +277,7 @@
     "href": "about.html#technical-skills",
     "title": "About Yuyang",
     "section": "Technical Skills",
-    "text": "Technical Skills\n\nMachine Learning & Deep Learning\nComputer Vision\nNatural Language Processing\nReinforcement Learning\nMeta Learning\nGenerative Model\nUnsupervised Learning\nLarge Language Model\nConvex Optmization\nProbabilitic Graphical Model\nDeep Graph Learning"
+    "text": "Technical Skills\n\n  \n    Python\n    Deep Learning\n    Machine Learning\n    Computer Vision\n    Natural Language Processing\n    Deep Reinforcement Learning\n    Graph Neural Networks\n    Large Language Model\n    Model Compression\n    Convex Optimization\n    Probabilstic Graph Model\n    Meta Learning\n    Deep Generative Model"
   },
   {
     "objectID": "about.html#projects",
@@ -978,5 +978,33 @@
     "title": "MIT RES.18-009: Learn Differential Equations: Up Close With Gilbert Strang And Cleve Moler",
     "section": "",
     "text": "course"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html",
+    "href": "projects/StableDiffusion.html",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "",
+    "text": "Github Link: https://github.com/Yyzhang2000/StableDiffusion-ControlNet"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#encoder",
+    "href": "projects/StableDiffusion.html#encoder",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "Encoder",
+    "text": "Encoder\nEncoder is represented as \\(\\mathcal{E}\\) in the graph"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#decoder",
+    "href": "projects/StableDiffusion.html#decoder",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "Decoder",
+    "text": "Decoder\nDecoder is represented as \\(\\mathcal{D}\\) in the graph"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#u-net",
+    "href": "projects/StableDiffusion.html#u-net",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "U-Net",
+    "text": "U-Net"
   }
 ]
