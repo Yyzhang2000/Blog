@@ -252,13 +252,6 @@
     "text": "I am a master student of Singapore Management University majoring in IT in Business with AI track. I am passionate about AI. I have a strong background in computer science and big data. I am proficient in Python. I have experience in machine learning, deep learning. I am a quick learner and a good team player. I like to learn new things summary and show them with each other. Currently I’m looking for a full-time job in AI field."
   },
   {
-    "objectID": "about.html#bio",
-    "href": "about.html#bio",
-    "title": "About Yuyang",
-    "section": "",
-    "text": "I am a master student of Singapore Management University majoring in IT in Business with AI track. I am passionate about AI. I have a strong background in computer science and big data. I am proficient in Python. I have experience in machine learning, deep learning. I am a quick learner and a good team player. I like to learn new things summary and show them with each other. Currently I’m looking for a full-time job in AI field."
-  },
-  {
     "objectID": "about.html#education",
     "href": "about.html#education",
     "title": "About Yuyang",
@@ -791,6 +784,34 @@
     "text": "Meta Learning\nBayesian Meta Learning: Gaussian priors over parameters enable fast adaptation to new tasks in few-shot learning.\nLatent Task Representation: Many meta-learning frameworks use Gaussian distributions in the latent space to generalize across different tasks efficiently\nUncertainty Estimation: Gaussian-based models in meta-learning help quantify uncertainty, improving robustness in real-world application."
   },
   {
+    "objectID": "projects/StableDiffusion.html",
+    "href": "projects/StableDiffusion.html",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "",
+    "text": "Github Link: https://github.com/Yyzhang2000/StableDiffusion-ControlNet"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#encoder",
+    "href": "projects/StableDiffusion.html#encoder",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "Encoder",
+    "text": "Encoder\nEncoder is represented as \\(\\mathcal{E}\\) in the graph"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#decoder",
+    "href": "projects/StableDiffusion.html#decoder",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "Decoder",
+    "text": "Decoder\nDecoder is represented as \\(\\mathcal{D}\\) in the graph"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#u-net",
+    "href": "projects/StableDiffusion.html#u-net",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "U-Net",
+    "text": "U-Net"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "👋🏻Welcome to Yuyang’s Blog",
@@ -978,40 +999,5 @@
     "title": "MIT RES.18-009: Learn Differential Equations: Up Close With Gilbert Strang And Cleve Moler",
     "section": "",
     "text": "course"
-  },
-  {
-    "objectID": "projects/StableDiffusion.html",
-    "href": "projects/StableDiffusion.html",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "",
-    "text": "Github Link: https://github.com/Yyzhang2000/StableDiffusion-ControlNet"
-  },
-  {
-    "objectID": "projects/StableDiffusion.html#encoder",
-    "href": "projects/StableDiffusion.html#encoder",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "Encoder",
-    "text": "Encoder\nEncoder is represented as \\(\\mathcal{E}\\) in the graph"
-  },
-  {
-    "objectID": "projects/StableDiffusion.html#decoder",
-    "href": "projects/StableDiffusion.html#decoder",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "Decoder",
-    "text": "Decoder\nDecoder is represented as \\(\\mathcal{D}\\) in the graph"
-  },
-  {
-    "objectID": "projects/StableDiffusion.html#u-net",
-    "href": "projects/StableDiffusion.html#u-net",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "U-Net",
-    "text": "U-Net"
-  },
-  {
-    "objectID": "about.html#certifications",
-    "href": "about.html#certifications",
-    "title": "About Yuyang",
-    "section": "Certifications",
-    "text": "Certifications\n\n  \n    \n    \n      March 2025  - Present\n      Research Assistant Intern\n      SMART"
   }
 ]
