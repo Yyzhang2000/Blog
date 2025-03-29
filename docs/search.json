@@ -18,7 +18,7 @@
     "href": "resource.html#natural-language-processing",
     "title": "Resources",
     "section": "Natural Language Processing",
-    "text": "Natural Language Processing\n\n\n\n\n\n\n\n\n\n\nStanford CS224N: Natural Language Processing with Deep Learning\n\n\n\nNN\n\n\nBasic\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nStanford\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCMU 11-711: Advanced NLP\n\n\n\nNN\n\n\nBasic\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nStanford\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCMU 11-667:Large Language Models: Methods and Applications\n\n\n\nNN\n\n\nBasic\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nStanford\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUCB CS294/194-196 Large Language Model Agents\n\n\n\n⭐️⭐️⭐️\n\n\n\nThis course focuses on the development and application of Large Language Models (LLMs) as agents capable of interacting with the world and performing various tasks. The…\n\n\n\nUCB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUCB CS294/194-196: Advanced Large Language Model Agents\n\n\n\nNN\n\n\nBasic\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nUCB\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Natural Language Processing\n\n\n\n\n\n\n\n\n\n\nStanford CS224N: Natural Language Processing with Deep Learning\n\n\n\nNN\n\n\nBasic\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nStanford\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCMU 11-711: Advanced NLP\n\n\n\nNN\n\n\nBasic\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nStanford\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCMU 11-667:Large Language Models: Methods and Applications\n\n\n\n⭐️⭐️⭐️\n\n\n\nThis course explores the cutting-edge techniques behind Large Language Models (LLMs), covering core methodologies, architecture innovations, training strategies, and…\n\n\n\nCMU\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUCB CS294/194-196 Large Language Model Agents\n\n\n\n⭐️⭐️⭐️\n\n\n\nThis course focuses on the development and application of Large Language Models (LLMs) as agents capable of interacting with the world and performing various tasks. The…\n\n\n\nUCB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUCB CS294/194-196: Advanced Large Language Model Agents\n\n\n\nNN\n\n\nBasic\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nUCB\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resource.html#reinforcement-learning-robotics",
@@ -186,7 +186,7 @@
     "href": "courses/cmu-llm.html",
     "title": "CMU 11-667:Large Language Models: Methods and Applications",
     "section": "",
-    "text": "course"
+    "text": "Course Link\nLearning Objectives:\nBy the end of the course, we will be able to:\n\nCompare and contrast various models within the LLM ecosystem to determine the most suitable model for specific tasks. ￼\nImplement and train neural language models from scratch using PyTorch. ￼\nUtilize open-source libraries to fine-tune and perform inference with popular pre-trained language models. ￼\nApply LLMs to a variety of downstream applications, understanding how pre-training decisions affect their suitability for these tasks. ￼\nRead and comprehend recent academic papers on LLMs, becoming familiar with common terms such as alignment, scaling laws, RLHF, prompt engineering, and instruction tuning. ￼\nDesign new methodologies to leverage existing large-scale language models in innovative ways. ￼"
   },
   {
     "objectID": "courses/ucb-algorithms.html",
@@ -816,7 +816,7 @@
     "href": "index.html",
     "title": "👋🏻Welcome to Yuyang’s Blog",
     "section": "",
-    "text": "LLM Part3: Applications\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n70 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part1: Pre Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n97 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Overview\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n2 min\n\n\n328 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nWhat a Generative Models?\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\nYuyang Zhang\n\n\n2 min\n\n\n367 words\n\n\n2025-03-26\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning without confusion\n\n\n\n\n\n\nOverview\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n1 min\n\n\n41 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning From Human Feedback\n\n\n\n\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n5 min\n\n\n927 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part2: Post Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n1 words\n\n\n2025-03-23\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Variational AutoEncoder\n\n\n\n\n\n\nGenerative Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n1 min\n\n\n2 words\n\n\n2025-03-18\n\n\n\n\n\n\n\n\n\n\n\n\nUnsupervised Learning is huge\n\n\n\n\n\n\nOverview\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n2 min\n\n\n275 words\n\n\n2025-03-17\n\n\n\n\n\n\n\n\n\n\n\n\nGaussian Distribution is All you need\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n7 min\n\n\n1,243 words\n\n\n2025-03-05\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Diffusion Models\n\n\n\n\n\n\nGenerative Model\n\n\nLarge Language Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n4 min\n\n\n738 words\n\n\n2025-03-04\n\n\n\n\n\n\n\n\n\n\n\n\nMath Toolbox for AI\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n3 min\n\n\n480 words\n\n\n2025-03-04\n\n\n\n\n\n\nNo matching items"
+    "text": "LLM Overview\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n3 min\n\n\n569 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part1: Pre Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n3 min\n\n\n428 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part3: Applications\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n70 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nWhat a Generative Models?\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\nYuyang Zhang\n\n\n2 min\n\n\n367 words\n\n\n2025-03-26\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning without confusion\n\n\n\n\n\n\nOverview\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n1 min\n\n\n41 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning From Human Feedback\n\n\n\n\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n5 min\n\n\n927 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part2: Post Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n1 words\n\n\n2025-03-23\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Variational AutoEncoder\n\n\n\n\n\n\nGenerative Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n1 min\n\n\n2 words\n\n\n2025-03-18\n\n\n\n\n\n\n\n\n\n\n\n\nUnsupervised Learning is huge\n\n\n\n\n\n\nOverview\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n2 min\n\n\n275 words\n\n\n2025-03-17\n\n\n\n\n\n\n\n\n\n\n\n\nGaussian Distribution is All you need\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n7 min\n\n\n1,243 words\n\n\n2025-03-05\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Diffusion Models\n\n\n\n\n\n\nGenerative Model\n\n\nLarge Language Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n4 min\n\n\n738 words\n\n\n2025-03-04\n\n\n\n\n\n\n\n\n\n\n\n\nMath Toolbox for AI\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n3 min\n\n\n480 words\n\n\n2025-03-04\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/cmu-convexoptimization.html",
@@ -1013,5 +1013,215 @@
     "title": "LLM Part1: Pre Training",
     "section": "",
     "text": "This is the first part of the LLM series, Pre-training, the Pre-training the most time consuming part of the LLM. In the nutshell, it just the next-word-prediction task. That’s it. Not anything fancy. However, what make the LLM hard to train and only achieve in recent years because it is LARGE. People need to develop and invent some efficient training algorithm to speed up the training process, make it efficient to training and deploying. In the article, I am going to take the path going through the training LLM from scratch, make the LLM easy to understand."
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#word-level",
+    "href": "posts/LLM/LLM-PreTraining.html#word-level",
+    "title": "LLM Part1: Pre Training",
+    "section": "Word Level",
+    "text": "Word Level"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#byte-pair-encoding",
+    "href": "posts/LLM/LLM-PreTraining.html#byte-pair-encoding",
+    "title": "LLM Part1: Pre Training",
+    "section": "Byte-Pair-Encoding",
+    "text": "Byte-Pair-Encoding"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#bit-encoding",
+    "href": "posts/LLM/LLM-PreTraining.html#bit-encoding",
+    "title": "LLM Part1: Pre Training",
+    "section": "Bit Encoding",
+    "text": "Bit Encoding"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#embedding",
+    "href": "posts/LLM/LLM-PreTraining.html#embedding",
+    "title": "LLM Part1: Pre Training",
+    "section": "Embedding",
+    "text": "Embedding\nEmbedding is"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#position-encoding",
+    "href": "posts/LLM/LLM-PreTraining.html#position-encoding",
+    "title": "LLM Part1: Pre Training",
+    "section": "Position Encoding",
+    "text": "Position Encoding"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#normalization",
+    "href": "posts/LLM/LLM-PreTraining.html#normalization",
+    "title": "LLM Part1: Pre Training",
+    "section": "Normalization",
+    "text": "Normalization"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#layer-normalization",
+    "href": "posts/LLM/LLM-PreTraining.html#layer-normalization",
+    "title": "LLM Part1: Pre Training",
+    "section": "Layer Normalization",
+    "text": "Layer Normalization"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#rms-normalization",
+    "href": "posts/LLM/LLM-PreTraining.html#rms-normalization",
+    "title": "LLM Part1: Pre Training",
+    "section": "RMS Normalization",
+    "text": "RMS Normalization\n\nPost-Norm vs. Pre-Norm"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#without-normalization",
+    "href": "posts/LLM/LLM-PreTraining.html#without-normalization",
+    "title": "LLM Part1: Pre Training",
+    "section": "Without Normalization",
+    "text": "Without Normalization\nRecently, (Zhu et al. 2025) proposed that we can remove the normalization without harm the performance of the neural network. It replace the normalization layer with a scaled tanh function, named Dynamic Tanh, defined as:\n\\[\n\\text{DyT}(x) = \\gamma * \\tanh(\\alpha x) + \\beta\n\\]\n\n\n\n\n\n\nFigure 1: Block with Dynamic Tanh(DyT) (Image Source: Transformers without Normalization)\n\n\n\nIt adjust the input activation range via a learnable scaling factor \\(\\alpha\\) and then squashed the extreme values through an S-shaped tanh function."
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#attention-mechnism",
+    "href": "posts/LLM/LLM-PreTraining.html#attention-mechnism",
+    "title": "LLM Part1: Pre Training",
+    "section": "Attention Mechnism",
+    "text": "Attention Mechnism"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#feed-forward-network",
+    "href": "posts/LLM/LLM-PreTraining.html#feed-forward-network",
+    "title": "LLM Part1: Pre Training",
+    "section": "Feed Forward Network",
+    "text": "Feed Forward Network\n\nMixture of Expert"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#cross-entropy-loss",
+    "href": "posts/LLM/LLM-PreTraining.html#cross-entropy-loss",
+    "title": "LLM Part1: Pre Training",
+    "section": "Cross Entropy Loss",
+    "text": "Cross Entropy Loss"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#model-initilization",
+    "href": "posts/LLM/LLM-PreTraining.html#model-initilization",
+    "title": "LLM Part1: Pre Training",
+    "section": "Model Initilization",
+    "text": "Model Initilization"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#optimizer",
+    "href": "posts/LLM/LLM-PreTraining.html#optimizer",
+    "title": "LLM Part1: Pre Training",
+    "section": "Optimizer",
+    "text": "Optimizer"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#about-gradients",
+    "href": "posts/LLM/LLM-PreTraining.html#about-gradients",
+    "title": "LLM Part1: Pre Training",
+    "section": "About Gradients",
+    "text": "About Gradients\n\nGradient Accumulations\n\n\nGradiant Clipping"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#mixed-precision",
+    "href": "posts/LLM/LLM-PreTraining.html#mixed-precision",
+    "title": "LLM Part1: Pre Training",
+    "section": "Mixed Precision",
+    "text": "Mixed Precision"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#parallellism",
+    "href": "posts/LLM/LLM-PreTraining.html#parallellism",
+    "title": "LLM Part1: Pre Training",
+    "section": "Parallellism",
+    "text": "Parallellism"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#supervised-fine-tuning",
+    "href": "posts/LLM/LLM-PreTraining.html#supervised-fine-tuning",
+    "title": "LLM Part1: Pre Training",
+    "section": "Supervised-Fine-Tuning",
+    "text": "Supervised-Fine-Tuning"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#reinforcement-learning-from-human-feedback",
+    "href": "posts/LLM/LLM-PreTraining.html#reinforcement-learning-from-human-feedback",
+    "title": "LLM Part1: Pre Training",
+    "section": "Reinforcement Learning from Human Feedback",
+    "text": "Reinforcement Learning from Human Feedback\n\nPPO\n\n\nDPO\n\n\nGRPO"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#quantization",
+    "href": "posts/LLM/LLM-PreTraining.html#quantization",
+    "title": "LLM Part1: Pre Training",
+    "section": "Quantization",
+    "text": "Quantization"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#knowledge-distillation",
+    "href": "posts/LLM/LLM-PreTraining.html#knowledge-distillation",
+    "title": "LLM Part1: Pre Training",
+    "section": "Knowledge Distillation",
+    "text": "Knowledge Distillation"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#prompt-enginnering",
+    "href": "posts/LLM/LLM-PreTraining.html#prompt-enginnering",
+    "title": "LLM Part1: Pre Training",
+    "section": "Prompt Enginnering",
+    "text": "Prompt Enginnering"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#prefix-tuning",
+    "href": "posts/LLM/LLM-PreTraining.html#prefix-tuning",
+    "title": "LLM Part1: Pre Training",
+    "section": "Prefix-Tuning",
+    "text": "Prefix-Tuning"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#adapter",
+    "href": "posts/LLM/LLM-PreTraining.html#adapter",
+    "title": "LLM Part1: Pre Training",
+    "section": "Adapter",
+    "text": "Adapter\n\nLoRA\n\n\nQ-LoRA"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#chatbot",
+    "href": "posts/LLM/LLM-PreTraining.html#chatbot",
+    "title": "LLM Part1: Pre Training",
+    "section": "ChatBot",
+    "text": "ChatBot\nMost know ChatGPT,"
+  },
+  {
+    "objectID": "posts/LLM/LLM-PreTraining.html#ai-agent",
+    "href": "posts/LLM/LLM-PreTraining.html#ai-agent",
+    "title": "LLM Part1: Pre Training",
+    "section": "AI Agent",
+    "text": "AI Agent"
+  },
+  {
+    "objectID": "posts/LLM/LLM-Overview.html",
+    "href": "posts/LLM/LLM-Overview.html",
+    "title": "LLM Overview",
+    "section": "",
+    "text": "A language model is nothing model that outputs a probability distribution over the next token in a sequence given the previous tokens in the sequence, mathematically, it denoted as:\n\\[\nP_{\\theta}(x_t | x_{1:t-1})\n\\tag{1}\\]\nNowaday, when we say a LLM, we usually mean a decoder model, which mean predict the next token based on the previous tokens. However previous, there is another type of the model, not only depends on the previous tokens, but also depends on other conditions, such as, other language for the machine translation task, which denoted as:\n\\[\nP_{\\theta}(x_t | x_{1:t-1}, z)\n\\tag{2}\\]\nIn the blog, we mainly focus on the first type, which has the form of Equation 1. The second type is not the focus of this blog, but we might mention it in the future blog. There two main steps of the training an LLM, the pre-training and fine-tuning. The pre-training is the most time consuming part of the LLM. In just the next-word-prediction task. After we have the pre-trained model, the model can only generate the next word based on the previous words. So, we need to fine-tune the model to make it output the desired output. This the job of the post-training. In the post-training, there are two main tasks, the supervised fine-tuning(SFT) and reinforcement learning from human feedback(RLHF). The SFT is the supervised fine-tuning, which is the most common way to fine-tune the model. The RLHF is a new way to fine-tune the model, which is more efficient than the SFT."
+  },
+  {
+    "objectID": "posts/LLM/LLM-Overview.html#supervised-fine-tuning-sft",
+    "href": "posts/LLM/LLM-Overview.html#supervised-fine-tuning-sft",
+    "title": "LLM Overview",
+    "section": "Supervised Fine Tuning (SFT)",
+    "text": "Supervised Fine Tuning (SFT)"
+  },
+  {
+    "objectID": "posts/LLM/LLM-Overview.html#reinforcement-learning-from-human-feedback-rlhf",
+    "href": "posts/LLM/LLM-Overview.html#reinforcement-learning-from-human-feedback-rlhf",
+    "title": "LLM Overview",
+    "section": "Reinforcement Learning from Human Feedback (RLHF)",
+    "text": "Reinforcement Learning from Human Feedback (RLHF)"
+  },
+  {
+    "objectID": "projects/MoE.html",
+    "href": "projects/MoE.html",
+    "title": "Training a Mixture of Expert LLM",
+    "section": "",
+    "text": "In this blog, I am going to implement the MoE decoder models, which is one of the mainstream LLM model, it used in the prominent LLM, such as DeepSeek[]. The full code is on the following GitHub repository"
   }
 ]
