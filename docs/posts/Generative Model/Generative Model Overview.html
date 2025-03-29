@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yuyang Zhang">
 <meta name="dcterms.date" content="2025-03-26">
-<meta name="description" content="In this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance">
+<meta name="description" content="In this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance">
 
 <title>What a Generative Models?</title>
 <style>
@@ -22,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -105,11 +126,11 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../style/styles.css">
 <meta property="og:title" content="What a Generative Models?">
-<meta property="og:description" content="In this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance">
+<meta property="og:description" content="In this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance">
 <meta property="og:image" content="images/genAI.png">
 </head>
 
-<body class="floating nav-fixed slimcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -167,8 +188,8 @@ window.Quarto = {
   <ul>
   <li><a href="#what-is-the-generative-models-and-generative-ai" id="toc-what-is-the-generative-models-and-generative-ai" class="nav-link active" data-scroll-target="#what-is-the-generative-models-and-generative-ai">What is the Generative Models and Generative AI?</a></li>
   <li><a href="#auto-regressive-models" id="toc-auto-regressive-models" class="nav-link" data-scroll-target="#auto-regressive-models">Auto-Regressive Models</a></li>
-  <li><a href="#variational-infrence-models" id="toc-variational-infrence-models" class="nav-link" data-scroll-target="#variational-infrence-models">Variational Infrence Models</a></li>
-  <li><a href="#generative-adversial-networks" id="toc-generative-adversial-networks" class="nav-link" data-scroll-target="#generative-adversial-networks">Generative Adversial Networks</a></li>
+  <li><a href="#variational-autoencoder-models" id="toc-variational-autoencoder-models" class="nav-link" data-scroll-target="#variational-autoencoder-models">Variational AutoEncoder Models</a></li>
+  <li><a href="#generative-adversarial-networks" id="toc-generative-adversarial-networks" class="nav-link" data-scroll-target="#generative-adversarial-networks">Generative Adversarial Networks</a></li>
   <li><a href="#energy-based-models" id="toc-energy-based-models" class="nav-link" data-scroll-target="#energy-based-models">Energy-Based Models</a></li>
   <li><a href="#flow-based-models" id="toc-flow-based-models" class="nav-link" data-scroll-target="#flow-based-models">Flow-Based Models</a></li>
   <li><a href="#diffusion-models" id="toc-diffusion-models" class="nav-link" data-scroll-target="#diffusion-models">Diffusion Models</a></li>
@@ -190,11 +211,11 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">What a Generative Models?</h1>
+<h1 class="title"><strong>What a Generative Models?</strong></h1>
   <div class="quarto-categories">
     <div class="quarto-category">Generative Model</div>
     <div class="quarto-category">Overview</div>
@@ -203,13 +224,19 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    In this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance
+    In this blog, I am going to summary the <em>6</em> most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yuyang Zhang </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -232,16 +259,21 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-the-generative-models-and-generative-ai" class="level1 page-columns page-full">
+<section id="what-is-the-generative-models-and-generative-ai" class="level1">
 <h1>What is the Generative Models and Generative AI?</h1>
 <p>Generative models, as the name indicated, are models that can <em>generative</em> new content. Unlike <strong>discriminate models</strong>, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Density_estimation">Density Estimation</a>:</li>
+<li><a href="https://en.wikipedia.org/wiki/Density_estimation">Density Estimation</a>: Estimate the probability density function of the data.</li>
+<li><a href="https://en.wikipedia.org/wiki/Anomaly_detection">Anomaly Detection</a>: Detect the anomaly data points.</li>
+<li><a href="https://en.wikipedia.org/wiki/Imputation">Imputation</a>: Fill in the missing data.</li>
+<li><a href="https://en.wikipedia.org/wiki/Data_augmentation">Data Augmentation</a>: Generate new data to increase the size of the dataset.</li>
+<li><a href="https://en.wikipedia.org/wiki/Data_generation">Data Generation</a>: Generate new data to train the model.</li>
+<li><a href="https://en.wikipedia.org/wiki/Data_compression">Data Compression</a>: Compress the data to save the storage.</li>
+<li><a href="https://en.wikipedia.org/wiki/Denoising">Data Denoising</a>: Remove the noise from the data.</li>
+<li><a href="https://en.wikipedia.org/wiki/Latent_space">Latent Space Exploration</a>: Explore the latent space of the data.</li>
+<li><a href="https://en.wikipedia.org/wiki/Interpolation">Latent Space Interpolation</a>: Interpolate between the data points.</li>
 </ul>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Density Estimation is the type of task that</p>
-</div></div><div id="fig-overview-generative-models" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-overview-generative-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-overview-generative-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="https://noblecatt-1304922865.cos.ap-singapore.myqcloud.com/202503062129654.png" class="img-fluid figure-img">
@@ -256,18 +288,18 @@ Figure&nbsp;1: Summary of various kinds of deep generative models. (Image Source
 <section id="auto-regressive-models" class="level1">
 <h1>Auto-Regressive Models</h1>
 <div id="thm-line" class="theorem-unnumbered theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Machine Learning)</strong></span> The equation of any straight line, called a linear equation, can be written as:</p>
-<p><span class="math display">\[
-y = mx + b
+<p><span class="theorem-title"><strong>Theorem 1 (Auto Regressive Model)</strong></span> An <strong>auto-regressive generative model</strong> is a type of <strong>generative model</strong> that models the <strong>joint probability distribution</strong> of a sequence (e.g., words, pixels, audio samples) by factorizing it into a <strong>product of conditional probabilities</strong>—each conditioned on the previous elements Mathematically, given a sequence <span class="math inline">\(x = (x_1, x_2, \cdots, x_T)\)</span>, the joint probability is modeled as <span class="math display">\[
+P_\theta(\mathrm{x}) = \prod_{t=1}^T P_\theta(x_t | x_{&lt;t})
 \]</span></p>
 </div>
-<p>See <a href="#thm-line" class="quarto-xref">Theorem&nbsp;1</a>.</p>
+<p>For more details, please check my this <a href="">blog</a></p>
 </section>
-<section id="variational-infrence-models" class="level1">
-<h1>Variational Infrence Models</h1>
+<section id="variational-autoencoder-models" class="level1">
+<h1>Variational AutoEncoder Models</h1>
+<p>For more details, please check my this <a href="https://yyzhang2000.github.io/Blog/posts/Generative%20Model/VAE.html">blog</a></p>
 </section>
-<section id="generative-adversial-networks" class="level1">
-<h1>Generative Adversial Networks</h1>
+<section id="generative-adversarial-networks" class="level1">
+<h1>Generative Adversarial Networks</h1>
 </section>
 <section id="energy-based-models" class="level1">
 <h1>Energy-Based Models</h1>
@@ -277,6 +309,8 @@ y = mx + b
 </section>
 <section id="diffusion-models" class="level1">
 <h1>Diffusion Models</h1>
+<p>For more details, please check my this <a href="https://yyzhang2000.github.io/Blog/posts/Generative%20Model/Diffusion%20Model.html">blog</a></p>
+<p><span class="citation" data-cites="daoFlashAttention2FasterAttention2023a">(<a href="#ref-daoFlashAttention2FasterAttention2023a" role="doc-biblioref">Dao 2023</a>)</span></p>
 </section>
 <section id="combining-different-models" class="level1">
 <h1>Combining Different Models</h1>
@@ -304,9 +338,14 @@ y = mx + b
 <p>In the blog, we has explore go through several generative models. We explore why we need generative models. For different purposes, we can different choice of the models. On the other hand, we can combine different models to get better performance. There are still more room for the generative models.</p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-daoFlashAttention2FasterAttention2023a" class="csl-entry" role="listitem">
+Dao, Tri. 2023. <span>“<span>FlashAttention-2</span>: <span>Faster Attention</span> with <span>Better Parallelism</span> and <span>Work Partitioning</span>.”</span> July 17, 2023. <a href="https://doi.org/10.48550/arXiv.2307.08691">https://doi.org/10.48550/arXiv.2307.08691</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

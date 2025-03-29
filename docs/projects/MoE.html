@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yuyang Zhang">
+<meta name="description" content="Dive into the fascinating world of Mixture of Experts (MoE) models! Learn how training large language models (LLMs) with specialized ‘experts’ enhances performance, scalability, and efficiency. Discover key insights, challenges, and the future potential of MoE-based LLM architectures.">
 
-<title>About Yuyang</title>
+<title>Training a Mixture of Expert LLM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="././icon.avif" rel="icon">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-28147fb08e7b933bb875f987410a5b55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f122c13e66b31791eb92fc8690c909d6.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././icon.avif" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-28147fb08e7b933bb875f987410a5b55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f122c13e66b31791eb92fc8690c909d6.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,13 +74,13 @@ ul.task-list li input[type="checkbox"] {
 <link href="https://fonts.cdnfonts.com/css/cmu-sans-serif" rel="stylesheet">
 
 
-<link rel="stylesheet" href="style/styles.css">
-<meta property="og:title" content="About Yuyang">
-<meta property="og:description" content="">
-<meta property="og:image" content="cat.jpg">
+<link rel="stylesheet" href="../style/styles.css">
+<meta property="og:title" content="Training a Mixture of Expert LLM">
+<meta property="og:description" content="Dive into the fascinating world of Mixture of Experts (MoE) models! Learn how training large language models (LLMs) with specialized ‘experts’ enhances performance, scalability, and efficiency. Discover key insights, challenges, and the future potential of MoE-based LLM architectures.">
+<meta property="og:image" content="./images/moe.png">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -90,21 +93,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resource.html"> 
+    <a class="nav-link" href="../resource.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item compact">
@@ -126,120 +129,55 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<div class="quarto-about-solana column-page">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About Yuyang</h1>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header> <div class="about-links">
-  <a href="https://www.linkedin.com/in/zhang-yuyang/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/Yyzhang2000" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="mailto:zhangyuyang1211@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://noblecatt-1304922865.cos.ap-singapore.myqcloud.com/Yuyang_CV_General.pdf" class="about-link" rel="" target="">
-    <i class="bi bi-file-person"></i>
-     <span class="about-link-text">Resume</span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content column-page" id="quarto-document-content">
-<p>I am a master student of Singapore Management University majoring in IT in Business with AI track. I am passionate about AI. I have a strong background in computer science and big data. I am proficient in Python. I have experience in machine learning, deep learning. I am a quick learner and a good team player. I like to learn new things summary and show them with each other. Currently I’m looking for a full-time job in AI field.</p>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<div class="timeline">
-  <div class="timeline-item">
-    <div class="dot"></div>
-    <div class="content">
-      <div class="year">2023 - 2025</div>
-      <div class="degree">Master of IT in Business</div>
-      <div class="school"><a href="https://www.smu.edu.sg/">Singapore Management University</a></div>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="dot"></div>
-    <div class="content">
-      <div class="year">2020 - 2023</div>
-      <div class="degree">Bachelor of Computer Science</div>
-      <div class="school"><a href="https://www.uow.edu.au/">University of Wollongong</a></div>
-    </div>
+<h1 class="title"><strong>Training a Mixture of Expert LLM</strong></h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Large Language Model</div>
   </div>
   </div>
-</section>
-<section id="work-experience" class="level2">
-<h2 data-anchor-id="work-experience">Work Experience</h2>
-<div class="timeline">
-  <div class="timeline-item">
-    <div class="dot"></div>
-    <div class="content">
-      <div class="year">March 2025  - Present</div>
-      <div class="degree">Research Assistant Intern</div>
-      <div class="school"><a href="https://smart.mit.edu/">SMART </a></div>
-    </div>
-  </div>
-  </div>
-<!-- ## Certifications
-```{=html}
-<div class="timeline">
-  <div class="timeline-item">
-    <div class="dot"></div>
-    <div class="content">
-      <div class="year">March 2025  - Present</div>
-      <div class="degree">Research Assistant Intern</div>
-      <div class="school"><a href="https://smart.mit.edu/">SMART </a></div>
-    </div>
-  </div>
-  </div>
-``` -->
-</section>
-<section id="technical-skills" class="level2">
-<h2 data-anchor-id="technical-skills">Technical Skills</h2>
-<div class="tech-stack-container">
-  <div class="tech-tags">
-    <span class="tag">Python Development</span>
-    <span class="tag">Algorithm Design</span>
-    <span class="tag">Deep Learning</span>
-    <span class="tag">Machine Learning</span>
-    <span class="tag">Computer Vision</span>
-    <span class="tag">Natural Language Processing</span>
-    <span class="tag-highlight">Deep Reinforcement Learning</span>
-    <span class="tag">Graph Neural Networks</span>
-    <span class="tag-highlight">Large Language Model</span>
-    <span class="tag">Model Compression</span>
-    <span class="tag">Convex Optimization</span>
-    <span class="tag">Probabilistic Graph Model</span>
-    <span class="tag">Meta Learning</span>
-    <span class="tag-highlight">Deep Generative Model</span>
+
+<div>
+  <div class="description">
+    Dive into the fascinating world of Mixture of Experts (MoE) models! Learn how training large language models (LLMs) with specialized ‘experts’ enhances performance, scalability, and efficiency. Discover key insights, challenges, and the future potential of MoE-based LLM architectures.
   </div>
 </div>
-</section>
-<section id="projects" class="level2">
-<h2 data-anchor-id="projects">Projects</h2>
 
 
-</section>
-</main></div>
-    </div>
-    <img src="cat.jpg" class="about-image
-  rounded " style="width: 15em;">
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yuyang Zhang </p>
+          </div>
   </div>
-</div>
- <!-- /main -->
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -404,6 +342,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

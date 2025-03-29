@@ -49,22 +49,19 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/MoE.html",
       "/projects/StableDiffusion.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
-      "/posts/LLM/LLM-Applications.html",
-      "/posts/LLM/LLM-PreTraining.html",
-      "/posts/LLM/LLM-Overview.html",
       "/posts/Generative Model/Generative Model Overview.html",
       "/posts/Rl.html",
       "/posts/RLHF.html",
       "/posts/LLM/LLM-PostTraining.html",
       "/posts/Generative Model/VAE.html",
       "/posts/Un-supervised-Learning.html",
+      "/posts/LLM/LLM-Overview.html",
       "/posts/Gaussian.html",
       "/posts/Generative Model/Diffusion Model.html",
       "/posts/MathToolBox.html"

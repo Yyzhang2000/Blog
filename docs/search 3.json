@@ -252,6 +252,13 @@
     "text": "I am a master student of Singapore Management University majoring in IT in Business with AI track. I am passionate about AI. I have a strong background in computer science and big data. I am proficient in Python. I have experience in machine learning, deep learning. I am a quick learner and a good team player. I like to learn new things summary and show them with each other. Currently I’m looking for a full-time job in AI field."
   },
   {
+    "objectID": "about.html#bio",
+    "href": "about.html#bio",
+    "title": "About Yuyang",
+    "section": "",
+    "text": "I am a master student of Singapore Management University majoring in IT in Business with AI track. I am passionate about AI. I have a strong background in computer science and big data. I am proficient in Python. I have experience in machine learning, deep learning. I am a quick learner and a good team player. I like to learn new things summary and show them with each other. Currently I’m looking for a full-time job in AI field."
+  },
+  {
     "objectID": "about.html#education",
     "href": "about.html#education",
     "title": "About Yuyang",
@@ -284,7 +291,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Training a Mixture of Expert LLM\n\n\n\nLarge Language Model\n\n\n\nDive into the fascinating world of Mixture of Experts (MoE) models! Learn how training large language models (LLMs) with specialized ‘experts’ enhances performance…\n\n\n\nYuyang Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStable Diffusion From Scratch with Fine Tuning\n\n\n\nGenerative Model\n\n\nDiffusion Model\n\n\nMulti Modal\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nYuyang Zhang\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Stable Diffusion From Scratch with Fine Tuning\n\n\n\nGenerative Model\n\n\nDiffusion Model\n\n\nMulti Modal\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…\n\n\n\nYuyang Zhang\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/RLHF.html",
@@ -352,182 +359,182 @@
   {
     "objectID": "posts/LLM/LLM-Overview.html#word-level",
     "href": "posts/LLM/LLM-Overview.html#word-level",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Word Level",
     "text": "Word Level"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#byte-pair-encoding",
     "href": "posts/LLM/LLM-Overview.html#byte-pair-encoding",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Byte-Pair-Encoding",
     "text": "Byte-Pair-Encoding"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#bit-encoding",
     "href": "posts/LLM/LLM-Overview.html#bit-encoding",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Bit Encoding",
     "text": "Bit Encoding"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#embedding",
     "href": "posts/LLM/LLM-Overview.html#embedding",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Embedding",
     "text": "Embedding\nEmbedding is"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#position-encoding",
     "href": "posts/LLM/LLM-Overview.html#position-encoding",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Position Encoding",
     "text": "Position Encoding"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#normalization",
     "href": "posts/LLM/LLM-Overview.html#normalization",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Normalization",
     "text": "Normalization"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#layer-normalization",
     "href": "posts/LLM/LLM-Overview.html#layer-normalization",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Layer Normalization",
     "text": "Layer Normalization"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#rms-normalization",
     "href": "posts/LLM/LLM-Overview.html#rms-normalization",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "RMS Normalization",
     "text": "RMS Normalization\n\nPost-Norm vs. Pre-Norm"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#without-normalization",
     "href": "posts/LLM/LLM-Overview.html#without-normalization",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Without Normalization",
     "text": "Without Normalization\nRecently, (Zhu et al. 2025) proposed that we can remove the normalization without harm the performance of the neural network. It replace the normalization layer with a scaled tanh function, named Dynamic Tanh, defined as:\n\\[\n\\text{DyT}(x) = \\gamma * \\tanh(\\alpha x) + \\beta\n\\tag{1}\\]\n\n\n\n\n\n\nFigure 1: Block with Dynamic Tanh(DyT) (Image Source: Transformers without Normalization)\n\n\n\nIt adjust the input activation range via a learnable scaling factor \\(\\alpha\\) and then squashed the extreme values through an S-shaped tanh function."
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#attention-mechnism",
     "href": "posts/LLM/LLM-Overview.html#attention-mechnism",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Attention Mechnism",
     "text": "Attention Mechnism"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#feed-forward-network",
     "href": "posts/LLM/LLM-Overview.html#feed-forward-network",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Feed Forward Network",
     "text": "Feed Forward Network\n\nMixture of Expert"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#cross-entropy-loss",
     "href": "posts/LLM/LLM-Overview.html#cross-entropy-loss",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Cross Entropy Loss",
     "text": "Cross Entropy Loss"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#model-initilization",
     "href": "posts/LLM/LLM-Overview.html#model-initilization",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Model Initilization",
     "text": "Model Initilization"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#optimizer",
     "href": "posts/LLM/LLM-Overview.html#optimizer",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Optimizer",
     "text": "Optimizer"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#about-gradients",
     "href": "posts/LLM/LLM-Overview.html#about-gradients",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "About Gradients",
     "text": "About Gradients\n\nGradient Accumulations\n\n\nGradiant Clipping"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#mixed-precision",
     "href": "posts/LLM/LLM-Overview.html#mixed-precision",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Mixed Precision",
     "text": "Mixed Precision"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#parallellism",
     "href": "posts/LLM/LLM-Overview.html#parallellism",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Parallellism",
     "text": "Parallellism"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#supervised-fine-tuning",
     "href": "posts/LLM/LLM-Overview.html#supervised-fine-tuning",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Supervised-Fine-Tuning",
     "text": "Supervised-Fine-Tuning"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#reinforcement-learning-from-human-feedback",
     "href": "posts/LLM/LLM-Overview.html#reinforcement-learning-from-human-feedback",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Reinforcement Learning from Human Feedback",
     "text": "Reinforcement Learning from Human Feedback\n\nPPO\n\n\nDPO\n\n\nGRPO"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#quantization",
     "href": "posts/LLM/LLM-Overview.html#quantization",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Quantization",
     "text": "Quantization"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#knowledge-distillation",
     "href": "posts/LLM/LLM-Overview.html#knowledge-distillation",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Knowledge Distillation",
     "text": "Knowledge Distillation"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#prompt-enginnering",
     "href": "posts/LLM/LLM-Overview.html#prompt-enginnering",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Prompt Enginnering",
     "text": "Prompt Enginnering"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#prefix-tuning",
     "href": "posts/LLM/LLM-Overview.html#prefix-tuning",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Prefix-Tuning",
     "text": "Prefix-Tuning"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#adapter",
     "href": "posts/LLM/LLM-Overview.html#adapter",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "Adapter",
     "text": "Adapter\n\nLoRA\n\n\nQ-LoRA"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#chatbot",
     "href": "posts/LLM/LLM-Overview.html#chatbot",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "ChatBot",
     "text": "ChatBot\nMost know ChatGPT,"
   },
   {
     "objectID": "posts/LLM/LLM-Overview.html#ai-agent",
     "href": "posts/LLM/LLM-Overview.html#ai-agent",
-    "title": "LLM Overview",
+    "title": "Let’s understand Large Language Model from scratch",
     "section": "AI Agent",
     "text": "AI Agent"
   },
@@ -550,7 +557,7 @@
     "href": "posts/Generative Model/Generative Model Overview.html",
     "title": "What a Generative Models?",
     "section": "",
-    "text": "Generative models, as the name indicated, are models that can generative new content. Unlike discriminate models, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because:\n\nDensity Estimation: Estimate the probability density function of the data.\nAnomaly Detection: Detect the anomaly data points.\nImputation: Fill in the missing data.\nData Augmentation: Generate new data to increase the size of the dataset.\nData Generation: Generate new data to train the model.\nData Compression: Compress the data to save the storage.\nData Denoising: Remove the noise from the data.\nLatent Space Exploration: Explore the latent space of the data.\nLatent Space Interpolation: Interpolate between the data points.\n\n\n\n\n\n\n\nFigure 1: Summary of various kinds of deep generative models. (Image Source: Probabilistic Machine Learning)\n\n\n\nThere are 6 types of generative models, as showed in the Figure 1. In this article, we will go through those 6 different types. Get into the details of each different types and compare models. How to combine those model to get more complex and useful generative models."
+    "text": "Generative models, as the name indicated, are models that can generative new content. Unlike discriminate models, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because:\n\nDensity Estimation:\n\n\n\nDensity Estimation is the type of task that\n\n\n\n\n\n\nFigure 1: Summary of various kinds of deep generative models. (Image Source: Probabilistic Machine Learning)\n\n\n\nThere are 6 types of generative models, as showed in the Figure 1. In this article, we will go through those 6 different types. Get into the details of each different types and compare models. How to combine those model to get more complex and useful generative models."
   },
   {
     "objectID": "posts/Generative Model/Generative Model Overview.html#diffusion-models-vae",
@@ -784,39 +791,11 @@
     "text": "Meta Learning\nBayesian Meta Learning: Gaussian priors over parameters enable fast adaptation to new tasks in few-shot learning.\nLatent Task Representation: Many meta-learning frameworks use Gaussian distributions in the latent space to generalize across different tasks efficiently\nUncertainty Estimation: Gaussian-based models in meta-learning help quantify uncertainty, improving robustness in real-world application."
   },
   {
-    "objectID": "projects/StableDiffusion.html",
-    "href": "projects/StableDiffusion.html",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "",
-    "text": "Github Link: https://github.com/Yyzhang2000/StableDiffusion-ControlNet"
-  },
-  {
-    "objectID": "projects/StableDiffusion.html#encoder",
-    "href": "projects/StableDiffusion.html#encoder",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "Encoder",
-    "text": "Encoder\nEncoder is represented as \\(\\mathcal{E}\\) in the graph\n(att?)"
-  },
-  {
-    "objectID": "projects/StableDiffusion.html#decoder",
-    "href": "projects/StableDiffusion.html#decoder",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "Decoder",
-    "text": "Decoder\nDecoder is represented as \\(\\mathcal{D}\\) in the graph"
-  },
-  {
-    "objectID": "projects/StableDiffusion.html#u-net",
-    "href": "projects/StableDiffusion.html#u-net",
-    "title": "Stable Diffusion From Scratch with Fine Tuning",
-    "section": "U-Net",
-    "text": "U-Net"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "👋🏻Welcome to Yuyang’s Blog",
     "section": "",
-    "text": "LLM Part3: Applications\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n70 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part1: Pre Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n97 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Overview\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n2 min\n\n\n328 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nWhat a Generative Models?\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\nYuyang Zhang\n\n\n2 min\n\n\n367 words\n\n\n2025-03-26\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning without confusion\n\n\n\n\n\n\nOverview\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n1 min\n\n\n41 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning From Human Feedback\n\n\n\n\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n5 min\n\n\n927 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part2: Post Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n1 words\n\n\n2025-03-23\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Variational AutoEncoder\n\n\n\n\n\n\nGenerative Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n1 min\n\n\n2 words\n\n\n2025-03-18\n\n\n\n\n\n\n\n\n\n\n\n\nUnsupervised Learning is huge\n\n\n\n\n\n\nOverview\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n2 min\n\n\n275 words\n\n\n2025-03-17\n\n\n\n\n\n\n\n\n\n\n\n\nGaussian Distribution is All you need\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n7 min\n\n\n1,243 words\n\n\n2025-03-05\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Diffusion Models\n\n\n\n\n\n\nGenerative Model\n\n\nLarge Language Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n4 min\n\n\n738 words\n\n\n2025-03-04\n\n\n\n\n\n\n\n\n\n\n\n\nMath Toolbox for AI\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n3 min\n\n\n480 words\n\n\n2025-03-04\n\n\n\n\n\n\nNo matching items"
+    "text": "What a Generative Models?\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n2 min\n\n\n220 words\n\n\n2025-03-26\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning without confusion\n\n\n\n\n\n\nOverview\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n1 min\n\n\n41 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning From Human Feedback\n\n\n\n\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n5 min\n\n\n927 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part2: Post Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n1 words\n\n\n2025-03-23\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Variational AutoEncoder\n\n\n\n\n\n\nGenerative Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n1 min\n\n\n2 words\n\n\n2025-03-18\n\n\n\n\n\n\n\n\n\n\n\n\nUnsupervised Learning is huge\n\n\n\n\n\n\nOverview\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n2 min\n\n\n275 words\n\n\n2025-03-17\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s understand Large Language Model from scratch\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n2 min\n\n\n328 words\n\n\n2025-03-17\n\n\n\n\n\n\n\n\n\n\n\n\nGaussian Distribution is All you need\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n7 min\n\n\n1,243 words\n\n\n2025-03-05\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Diffusion Models\n\n\n\n\n\n\nGenerative Model\n\n\nLarge Language Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n4 min\n\n\n738 words\n\n\n2025-03-04\n\n\n\n\n\n\n\n\n\n\n\n\nMath Toolbox for AI\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n3 min\n\n\n480 words\n\n\n2025-03-04\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/cmu-convexoptimization.html",
@@ -1001,17 +980,38 @@
     "text": "course"
   },
   {
-    "objectID": "posts/LLM/LLM-Applications.html",
-    "href": "posts/LLM/LLM-Applications.html",
-    "title": "LLM Part3: Applications",
+    "objectID": "projects/StableDiffusion.html",
+    "href": "projects/StableDiffusion.html",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
     "section": "",
-    "text": "This is the part 3 of the LLM series, application. What can we do after we have an LLM. One of the most significant application is the LLM Based Agent. With the ability of the LLM. The AI agent has acquire incredible ability. Besides the AI Agent, it has so many other applications that can be improve with the help of the LLM. We are going to dig into it."
+    "text": "Github Link: https://github.com/Yyzhang2000/StableDiffusion-ControlNet"
   },
   {
-    "objectID": "posts/LLM/LLM-PreTraining.html",
-    "href": "posts/LLM/LLM-PreTraining.html",
-    "title": "LLM Part1: Pre Training",
-    "section": "",
-    "text": "This is the first part of the LLM series, Pre-training, the Pre-training the most time consuming part of the LLM. In the nutshell, it just the next-word-prediction task. That’s it. Not anything fancy. However, what make the LLM hard to train and only achieve in recent years because it is LARGE. People need to develop and invent some efficient training algorithm to speed up the training process, make it efficient to training and deploying. In the article, I am going to take the path going through the training LLM from scratch, make the LLM easy to understand."
+    "objectID": "projects/StableDiffusion.html#encoder",
+    "href": "projects/StableDiffusion.html#encoder",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "Encoder",
+    "text": "Encoder\nEncoder is represented as \\(\\mathcal{E}\\) in the graph"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#decoder",
+    "href": "projects/StableDiffusion.html#decoder",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "Decoder",
+    "text": "Decoder\nDecoder is represented as \\(\\mathcal{D}\\) in the graph"
+  },
+  {
+    "objectID": "projects/StableDiffusion.html#u-net",
+    "href": "projects/StableDiffusion.html#u-net",
+    "title": "Stable Diffusion From Scratch with Fine Tuning",
+    "section": "U-Net",
+    "text": "U-Net"
+  },
+  {
+    "objectID": "about.html#certifications",
+    "href": "about.html#certifications",
+    "title": "About Yuyang",
+    "section": "Certifications",
+    "text": "Certifications\n\n  \n    \n    \n      March 2025  - Present\n      Research Assistant Intern\n      SMART"
   }
 ]
