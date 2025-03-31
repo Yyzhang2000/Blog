@@ -550,14 +550,14 @@
     "href": "posts/Generative Model/Generative Model Overview.html",
     "title": "What a Generative Models?",
     "section": "",
-    "text": "Generative models, as the name indicated, are models that can generative new content. Unlike discriminate models, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because:\n\nDensity Estimation: Estimate the probability density function of the data.\nAnomaly Detection: Detect the anomaly data points.\nImputation: Fill in the missing data.\nData Augmentation: Generate new data to increase the size of the dataset.\nData Generation: Generate new data to train the model.\nData Compression: Compress the data to save the storage.\nData Denoising: Remove the noise from the data.\nLatent Space Exploration: Explore the latent space of the data.\nLatent Space Interpolation: Interpolate between the data points.\n\n\n\n\n\n\n\nFigure 1: Summary of various kinds of deep generative models. (Image Source: Probabilistic Machine Learning)\n\n\n\nGenerative Models can solve inverse problems. For example, the medical image reconstruction. Herea re some example of the generative models in the real world:\n\nText to Image Model: this is common in the current AI, for example, the Stable Diffusion Model and Dalles model, below are the example of the generation of Chat-4o model:\n\n\n\n\n\n\n\nFigure 2: Image Generation through ChatGPT-4o model.\n\n\n\n\nText to Video model such as Sora.\n\n\n\n\n\n\n\nFigure 3\n\n\n\nIn the blog, we will learn three things:\n\nRepresentation: how to model the joint distribution of many random variables\nLearning: how to learn and compare the different probability distribution\nInference: how to invert the generation process ( recover high-level description (latent variables) from raw data(images, text…)\n\nBesides the three main topics, we will introduce 6 different generative models as showed in the Figure 1. In this article, we will go through those 6 different types. Get into the details of each different types and compare models. How to combine those model to get more complex modeling ability.\n\n\n\n\n\n\nNote\n\n\n\nIn this blog, we only going through the main ideas of the different models, if you want to dig into different topics more deeply, please check my following blogs:\n\nVariational AutoEncoder Models\nDiffusion Models\nAuto-Regressive Models (Coming soon…)\nFlow Matching(Coming soon…)\nGAN(Coming soon…)"
+    "text": "Generative models, as the name indicated, are models that can generative new content. Unlike discriminate models, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because: (at?)\n\nDensity Estimation: Estimate the probability density function of the data.\nAnomaly Detection: Detect the anomaly data points.\nImputation: Fill in the missing data.\nData Augmentation: Generate new data to increase the size of the dataset.\nData Generation: Generate new data to train the model.\nData Compression: Compress the data to save the storage.\nData Denoising: Remove the noise from the data.\nLatent Space Exploration: Explore the latent space of the data.\nLatent Space Interpolation: Interpolate between the data points.\n\n\n\n\n\n\n\nFigure 1: Summary of various kinds of deep generative models. (Image Source: Probabilistic Machine Learning)\n\n\n\nGenerative Models can solve inverse problems. For example, the medical image reconstruction. Herea re some example of the generative models in the real world:\n\nText to Image Model: this is common in the current AI, for example, the Stable Diffusion Model and Dalles model, below are the example of the generation of Chat-4o model:\n\n\n\n\n\n\n\nFigure 2: Image Generation through ChatGPT-4o model.\n\n\n\n\nText to Video model such as Sora.\n\n\n\n\n\n\n\nFigure 3\n\n\n\nIn the blog, we will learn three things:\n\nRepresentation: how to model the joint distribution of many random variables\nLearning: how to learn and compare the different probability distribution\nInference: how to invert the generation process ( recover high-level description (latent variables) from raw data(images, text…)\n\nBesides the three main topics, we will introduce 6 different generative models as showed in the Figure 1. In this article, we will go through those 6 different types. Get into the details of each different types and compare models. How to combine those model to get more complex modeling ability.\n\n\n\n\n\n\nNote\n\n\n\nIn this blog, we only going through the main ideas of the different models, if you want to dig into different topics more deeply, please check my following blogs:\n\nVariational AutoEncoder Models\nDiffusion Models\nAuto-Regressive Models (Coming soon…)\nFlow Matching(Coming soon…)\nGAN(Coming soon…)"
   },
   {
     "objectID": "posts/Generative Model/Generative Model Overview.html#diffusion-models-vae",
     "href": "posts/Generative Model/Generative Model Overview.html#diffusion-models-vae",
     "title": "What a Generative Models?",
     "section": "Diffusion Models + VAE",
-    "text": "Diffusion Models + VAE"
+    "text": "Diffusion Models + VAE\n\n\n\nThe Architecture of the Stable Diffusion Models (Image Source: High-Resolution Image Synthesis with Latent Diffusion Models)\n\n\nOne limitation of the diffusion models, it need to go through many steps on the high-dimensional space. If we can train an model on the lower dimension and recover it back to the high dimension, than we can speed up both training and generating process. As proposed in (Rombach et al. 2022), the Latent Diffusion Model is one of those approach. It leverages latent diffusion techniques, making it computationally efficient and capable of generating diverse, photorealistic, and detailed visuals from textual prompts. Widely adopted for its open-source accessibility, Stable Diffusion enables artists, researchers, and developers to produce remarkable content easily."
   },
   {
     "objectID": "posts/Generative Model/Generative Model Overview.html#auto-regressive-vae",
@@ -592,7 +592,7 @@
     "href": "posts/Generative Model/Generative Model Overview.html#vae-gan",
     "title": "What a Generative Models?",
     "section": "VAE + GAN",
-    "text": "VAE + GAN"
+    "text": "VAE + GAN\nAs metioned in the paper (Larsen et al. 2016)"
   },
   {
     "objectID": "posts/MathToolBox.html",
@@ -816,7 +816,7 @@
     "href": "index.html",
     "title": "👋🏻Welcome to Yuyang’s Blog",
     "section": "",
-    "text": "What a Generative Models?\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\nYuyang Zhang\n\n\n4 min\n\n\n655 words\n\n\n2025-03-30\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Overview\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n3 min\n\n\n569 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part1: Pre Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n3 min\n\n\n428 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part3: Applications\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n70 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning without confusion\n\n\n\n\n\n\nOverview\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n1 min\n\n\n41 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning From Human Feedback\n\n\n\n\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n5 min\n\n\n927 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part2: Post Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n1 words\n\n\n2025-03-23\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Variational AutoEncoder\n\n\n\n\n\n\nGenerative Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n1 min\n\n\n2 words\n\n\n2025-03-18\n\n\n\n\n\n\n\n\n\n\n\n\nUnsupervised Learning is huge\n\n\n\n\n\n\nOverview\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n2 min\n\n\n275 words\n\n\n2025-03-17\n\n\n\n\n\n\n\n\n\n\n\n\nGaussian Distribution is All you need\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n7 min\n\n\n1,243 words\n\n\n2025-03-05\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Diffusion Models\n\n\n\n\n\n\nGenerative Model\n\n\nLarge Language Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n4 min\n\n\n738 words\n\n\n2025-03-04\n\n\n\n\n\n\n\n\n\n\n\n\nMath Toolbox for AI\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n3 min\n\n\n480 words\n\n\n2025-03-04\n\n\n\n\n\n\nNo matching items"
+    "text": "A Deep Dive into Neural Network\n\n\n\n\n\n\nOverview\n\n\n\nEmbark on a comprehensive exploration of neural networks, the backbone of modern artificial intelligence. This blog post delves into fundamental concepts, including architecture, training algorithms, and essential mathematics. It also covers popular network types—such as CNNs, RNNs, and Transformers—and provides insights into their applications, limitations, and recent innovations. Whether you’re a beginner eager to grasp foundational ideas or an experienced practitioner seeking deeper understanding, this deep dive offers valuable perspectives to enhance your neural network journey.\n\n\n\n\n\nYuyang Zhang\n\n\n2 min\n\n\n276 words\n\n\n2025-03-31\n\n\n\n\n\n\n\n\n\n\n\n\nWhat a Generative Models?\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\nYuyang Zhang\n\n\n7 min\n\n\n1,399 words\n\n\n2025-03-31\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Overview\n\n\n\n\n\n\nGenerative Model\n\n\nOverview\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n3 min\n\n\n569 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part1: Pre Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n3 min\n\n\n428 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part3: Applications\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n70 words\n\n\n2025-03-29\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning without confusion\n\n\n\n\n\n\nOverview\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n1 min\n\n\n41 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nReinforcement Learning From Human Feedback\n\n\n\n\n\n\nReinforcement Learning\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n5 min\n\n\n927 words\n\n\n2025-03-25\n\n\n\n\n\n\n\n\n\n\n\n\nLLM Part2: Post Training\n\n\n\n\n\n\nOverview\n\n\nLLM\n\n\n\nIn this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance\n\n\n\n\n\n1 min\n\n\n1 words\n\n\n2025-03-23\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Variational AutoEncoder\n\n\n\n\n\n\nGenerative Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n1 min\n\n\n2 words\n\n\n2025-03-18\n\n\n\n\n\n\n\n\n\n\n\n\nUnsupervised Learning is huge\n\n\n\n\n\n\nOverview\n\n\n\nIn this blog, I am going to review the most important concept in the AI world \n\n\n\n\n\n2 min\n\n\n275 words\n\n\n2025-03-17\n\n\n\n\n\n\n\n\n\n\n\n\nGaussian Distribution is All you need\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n7 min\n\n\n1,243 words\n\n\n2025-03-05\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into Diffusion Models\n\n\n\n\n\n\nGenerative Model\n\n\nLarge Language Model\n\n\n\nThis blog is my learning notes on the Diffusion Models, which is the state-of-art generative models. This blog will cover that is the diffusion models, how to use diffusion models to generate image, text-to-image, video. It also cover lagnuage diffusion model.\n\n\n\n\n\n4 min\n\n\n738 words\n\n\n2025-03-04\n\n\n\n\n\n\n\n\n\n\n\n\nMath Toolbox for AI\n\n\n\n\n\n\nMathematics\n\n\n\nAn Toolbox of essential math for artificial intelligence, including linear algebra, probability, calculus, and optimization.\n\n\n\n\n\n3 min\n\n\n480 words\n\n\n2025-03-04\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/cmu-convexoptimization.html",
@@ -1223,5 +1223,180 @@
     "title": "Training a Mixture of Expert LLM",
     "section": "",
     "text": "In this blog, I am going to implement the MoE decoder models, which is one of the mainstream LLM model, it used in the prominent LLM, such as DeepSeek[]. The full code is on the following GitHub repository"
+  },
+  {
+    "objectID": "projects/MoE.html#rms-norm",
+    "href": "projects/MoE.html#rms-norm",
+    "title": "Training a Mixture of Expert LLM",
+    "section": "RMS Norm",
+    "text": "RMS Norm\n\\[\n\\|\\mathbf{x}\\|_{\\text{RMS}} = \\sqrt{\\frac{1}{n} \\sum_{i=1}^{n} x_i^2}\n\\]"
+  },
+  {
+    "objectID": "projects/MoE.html#multi-head-latent-attention",
+    "href": "projects/MoE.html#multi-head-latent-attention",
+    "title": "Training a Mixture of Expert LLM",
+    "section": "Multi Head Latent Attention",
+    "text": "Multi Head Latent Attention\nMulti-Head Latent Attention(MLA) is an advanced attention mechanism designed to enhance the efficiency of Transformer-based models by significantly reducing the size of the Key-Value(KV) cache, thereby accelerating inference without compromising performance.\nThe Key Features of MLA is:\n\nLat"
+  },
+  {
+    "objectID": "projects/MoE.html#mixture-of-expert",
+    "href": "projects/MoE.html#mixture-of-expert",
+    "title": "Training a Mixture of Expert LLM",
+    "section": "Mixture of Expert",
+    "text": "Mixture of Expert"
+  },
+  {
+    "objectID": "projects/MoE.html#loss-function",
+    "href": "projects/MoE.html#loss-function",
+    "title": "Training a Mixture of Expert LLM",
+    "section": "Loss Function",
+    "text": "Loss Function"
+  },
+  {
+    "objectID": "projects/MoE.html#kv-cache",
+    "href": "projects/MoE.html#kv-cache",
+    "title": "Training a Mixture of Expert LLM",
+    "section": "KV-Cache",
+    "text": "KV-Cache\n\n\n\nComparison of scaled dot-product attention with and without KV caching. (Image Source: Transformers KV Caching Explained(Medium)\n\n\nWhen generating tokens one by one (as in the auto-regressive decoding), we don’t need to recompute \\(K\\) and \\(V\\), since the property of the causal attention. In the causal attention, the previous tokens will not attend the later tokens. So we can cache them:\n\n\\(K_\\text{cache} = [K_1, K_2, \\cdots, K_{t-1}]\\)\n\\(V_\\text{cache} = [V_1, V_2, \\cdots, V_{t-1}]\\)\n\nThen for the current token at time \\(t\\), we compute attention:\n\\[\n\\text{Attention}(Q_t, [K_\\text{cache}, K_t], [V_\\text{cache}, V_t])\n\\]\nThis will saves computation and accelerates generation significantly without lower the model performance."
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html",
+    "href": "posts/NeuralNetwork.html",
+    "title": "A Deep Dive into Neural Network",
+    "section": "",
+    "text": "Neural Network, as the core of the Deep Learning, deserve all the attention at it. It is the backbone of the most AI work nowadays. In the blog, we are going to dive into the Neural Networks, and the most common and useful components in the neural network, such as different activation functions, regulirazation techniques, different architecture of neural networks, and the optimization algorithms to optimize the parameters of the neural network. Besides, we are also going to see some applications of the neural networks in different field, such as computer vision, natural language processing, and reinforcement learning."
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#multiple-layer-percepton",
+    "href": "posts/NeuralNetwork.html#multiple-layer-percepton",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Multiple Layer Percepton",
+    "text": "Multiple Layer Percepton\nThe most simple form of the neural network."
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#convolution-neural-network",
+    "href": "posts/NeuralNetwork.html#convolution-neural-network",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Convolution Neural Network",
+    "text": "Convolution Neural Network"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#recurrent-neural-network",
+    "href": "posts/NeuralNetwork.html#recurrent-neural-network",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Recurrent Neural Network",
+    "text": "Recurrent Neural Network"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#transformer-neural-network",
+    "href": "posts/NeuralNetwork.html#transformer-neural-network",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Transformer Neural Network",
+    "text": "Transformer Neural Network"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#mamba",
+    "href": "posts/NeuralNetwork.html#mamba",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Mamba",
+    "text": "Mamba"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#activation-functions",
+    "href": "posts/NeuralNetwork.html#activation-functions",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Activation Functions",
+    "text": "Activation Functions"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#normalizations",
+    "href": "posts/NeuralNetwork.html#normalizations",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Normalizations",
+    "text": "Normalizations\n\nBatch Normalization\n\n\nLayer Normalization\n\n\nRMS Normalization"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#dropout",
+    "href": "posts/NeuralNetwork.html#dropout",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Dropout",
+    "text": "Dropout"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#residual-connection",
+    "href": "posts/NeuralNetwork.html#residual-connection",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Residual Connection",
+    "text": "Residual Connection"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#maximum-likelihood-learning",
+    "href": "posts/NeuralNetwork.html#maximum-likelihood-learning",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Maximum Likelihood Learning",
+    "text": "Maximum Likelihood Learning"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#loss-function",
+    "href": "posts/NeuralNetwork.html#loss-function",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Loss Function",
+    "text": "Loss Function"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#gradient-descent",
+    "href": "posts/NeuralNetwork.html#gradient-descent",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Gradient Descent",
+    "text": "Gradient Descent"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#auto-differentiate",
+    "href": "posts/NeuralNetwork.html#auto-differentiate",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Auto-Differentiate",
+    "text": "Auto-Differentiate\n\nStochastic Gradient Descent\n\n\nAdam"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#weight-decay",
+    "href": "posts/NeuralNetwork.html#weight-decay",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Weight Decay",
+    "text": "Weight Decay"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#early-stopping",
+    "href": "posts/NeuralNetwork.html#early-stopping",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Early Stopping",
+    "text": "Early Stopping"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#parameter-initialization",
+    "href": "posts/NeuralNetwork.html#parameter-initialization",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Parameter Initialization",
+    "text": "Parameter Initialization"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#computer-vision",
+    "href": "posts/NeuralNetwork.html#computer-vision",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Computer Vision",
+    "text": "Computer Vision"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#natural-language-processing",
+    "href": "posts/NeuralNetwork.html#natural-language-processing",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Natural Language Processing",
+    "text": "Natural Language Processing"
+  },
+  {
+    "objectID": "posts/NeuralNetwork.html#deep-reinforcement-learning",
+    "href": "posts/NeuralNetwork.html#deep-reinforcement-learning",
+    "title": "A Deep Dive into Neural Network",
+    "section": "Deep Reinforcement Learning",
+    "text": "Deep Reinforcement Learning"
   }
 ]

@@ -56,6 +56,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/NeuralNetwork.html",
       "/posts/Generative Model/Generative Model Overview.html",
       "/posts/LLM/LLM-Overview.html",
       "/posts/LLM/LLM-PreTraining.html",

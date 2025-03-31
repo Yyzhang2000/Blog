@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yuyang Zhang">
-<meta name="dcterms.date" content="2025-03-30">
+<meta name="dcterms.date" content="2025-03-31">
 <meta name="description" content="In this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance">
 
 <title>What a Generative Models?</title>
@@ -243,14 +243,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-03-30</p>
+      <p class="date">2025-03-31</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Last modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-03-30</p>
+      <p class="date-modified">2025-03-31</p>
     </div>
   </div>
     
@@ -263,7 +263,7 @@ window.Quarto = {
 
 <section id="what-is-the-generative-models-and-generative-ai" class="level1">
 <h1>What is the Generative Models and Generative AI?</h1>
-<p>Generative models, as the name indicated, are models that can <em>generative</em> new content. Unlike <strong>discriminate models</strong>, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because:</p>
+<p>Generative models, as the name indicated, are models that can <em>generative</em> new content. Unlike <strong>discriminate models</strong>, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because: <span class="citation" data-cites="at">(<a href="#ref-at" role="doc-biblioref"><strong>at?</strong></a>)</span></p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Density_estimation">Density Estimation</a>: Estimate the probability density function of the data.</li>
 <li><a href="https://en.wikipedia.org/wiki/Anomaly_detection">Anomaly Detection</a>: Detect the anomaly data points.</li>
@@ -394,22 +394,107 @@ P_\theta(\mathrm{x}) = \prod_{t=1}^T P_\theta(x_t | x_{&lt;t})
 </section>
 <section id="generative-adversarial-networks" class="level1">
 <h1>Generative Adversarial Networks</h1>
+<p>GANs are generative models that consist of two neural networks - a generator <span class="math inline">\(G\)</span>, and a discriminator <span class="math inline">\(D\)</span>- that complete against each other in a min-max game framework. The goal is for the generator to produce data indistinguishable from real samples, while discriminator tries to distinguish between real and fake(generated) data.</p>
+<ul>
+<li>Generator <span class="math inline">\(G\)</span>: Learns a mapping from random noise <span class="math inline">\(z \sim p_z(z)\)</span> (typically <span class="math inline">\(z \sim \mathcal{N}(0, I)\)</span> to realistic data sample <span class="math inline">\(x\)</span>: <span class="math inline">\(G(z; \theta_g) : z \mapsto x_{\text{fake}}\)</span></li>
+<li>Discriminator( <span class="math inline">\(D\)</span>): Outputs a probability that a given samples <span class="math inline">\(x\)</span> is real (from dataset) rather than fake (from generator): <span class="math inline">\(D(x; \theta_d): x \mapsto [0,1]\)</span></li>
+</ul>
+<p>The training of GAN involves solving the following min-max optimization problem:</p>
+<p><span class="math display">\[
+\min_{G}\max_{D} V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
+\]</span></p>
+<p>The training occurs iteratively by alternating steps:</p>
+<ol type="1">
+<li>Step 1 (Discriminator training): Update discriminator parameters <span class="math inline">\(\theta_d\)</span> to maximize tits objective, thus distinguishing fake from real data:</li>
+</ol>
+<p><span class="math display">\[
+\max_{\theta_d} \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
+\]</span></p>
+<ol start="2" type="1">
+<li>Step 2(Generator training): Update generator parameters <span class="math inline">\(\theta_g\)</span> to minimize the discriminator’s success, effectively fooling it:</li>
+</ol>
+<p><span class="math display">\[
+\min_{\theta_g} \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
+\]</span></p>
+<p>In theory, the training process converges to a <strong>Nash Equilibrium</strong>.</p>
 </section>
 <section id="energy-based-models" class="level1">
 <h1>Energy-Based Models</h1>
+<p>So far, the generative models modeling the alternative of the probability of the dataset. In the Energy Based Models, it define probabilistic models using an energy function, assigning low energy to configurations(samples) that occur frequently (realistic data points) and high energy to unlikely configurations. An energy-based model defines the probability distribution of data <span class="math inline">\(x\)</span> using an energy function <span class="math inline">\(E_\theta[x]\)</span>:</p>
+<p><span class="math display">\[
+p_\theta(x) = \frac{\exp(-E_\theta(x))}{Z(\theta)}
+\]</span></p>
+<p>To training from EBMs, one typical is to maximizes the likelihood of observed data <span class="math inline">\(p_{\text{data}}(x)\)</span></p>
+<p><span class="math display">\[
+\max_\theta \mathbb{E}_{x \sim p_{\text{data}}}(x)[\log p_\theta(x)] = \max_\theta \mathbb{E}_{x \sim p_{\text{data}}}(x)[-E_\theta(x)] - \log Z(\theta)
+\]</span></p>
+<p>To Sampling from the Energy Based Model, we using an iterative approaches such as Markov Chain Monte Carlo(MCMC), especially Langevin Dynamics.</p>
 </section>
 <section id="flow-based-models" class="level1">
 <h1>Flow-Based Models</h1>
+<p>Flow-Based models are generative models that represent complex probability distributions through invertible transformations of simpler latent distributions. They explicitly prove tractable likelihood computation, unlike many other generative models such as GANs and VAEs.</p>
+<p>Flow-based models define a generative process by applying an invertible and differentiable transformation <span class="math inline">\(f_{\theta}\)</span> (the “flow”) to a latent variable <span class="math inline">\(z\)</span>, typically sampled from a simple prior (e.g., standard Gaussian):</p>
+<p>Given the invertibility of <span class="math inline">\(f_\theta\)</span> , we can express the likelihood the of observe data explicitly using the change of variables formula:</p>
+<p><span class="math display">\[
+p_{X}(x) = p_{Z}(f_{\theta}^{-1}(x)) \left| \det \frac{\partial f_{\theta}^{-1}(x)}{\partial x} \right|
+\]</span></p>
+<p>Training Objective of the Flow Model is:</p>
+<p><span class="math display">\[
+\max_{\theta}\; \mathbb{E}{x \sim p{\text{data}}(x)}\left[ \log p_{X}(x;\theta) \right]
+\]</span></p>
+<p>In practice, complex transformations are obtained by composing simpler invertible transformations <span class="math inline">\(f_{\theta}^{(1)}, f_{\theta}^{(2)}, \dots, f_{\theta}^{(K)}\)</span>:</p>
+<p><span class="math display">\[
+f_{\theta}(z) = f_{\theta}^{(K)} \circ f_{\theta}^{(K-1)} \circ \dots \circ f_{\theta}^{(1)}(z)
+\]</span></p>
+<p>The determinant of the Jacobian for composed transformations simplifies as follows:</p>
+<p><span class="math display">\[
+\log \left| \det \frac{\partial f_{\theta}^{-1}(x)}{\partial x} \right|
+= \sum_{i=1}^{K} \log \left| \det \frac{\partial f_{\theta}^{(i)-1}(h_i)}{\partial h_i} \right|
+\]</span></p>
 </section>
 <section id="diffusion-models" class="level1">
 <h1>Diffusion Models</h1>
 <p>For more details, please check my this <a href="https://yyzhang2000.github.io/Blog/posts/Generative%20Model/Diffusion%20Model.html">blog</a></p>
-<p><span class="citation" data-cites="daoFlashAttention2FasterAttention2023a">(<a href="#ref-daoFlashAttention2FasterAttention2023a" role="doc-biblioref">Dao 2023</a>)</span></p>
+<p>The Diffusion Models are generative models that learn to reverse a gradual corruption process applies to data. They gained popularity due to their impressive results in generating high-quality, diverse samples across domain such as images, audio, and text. Diffusion models consist of two processes:</p>
+<ul>
+<li>Forward(Diffusion) Processes:</li>
+</ul>
+<p>Gradually adds noises to data <span class="math inline">\(x_0\)</span> over <span class="math inline">\(T\)</span> timesteps, typically Gaussian noise:</p>
+<p><span class="math display">\[
+q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t}x_{t-1}, \beta_t I), \quad t = 1,\dots,T
+\]</span></p>
+<p>This form a Markov chain. So the forward distribution can also be expressed directly in terms of <span class="math inline">\(x_0\)</span>:</p>
+<p><span class="math display">\[
+q(x_t|x_0) = \mathcal{N}(x_t; \sqrt{\bar{\alpha}_t} x_0, (1 - \bar{\alpha}_t)I)
+\]</span></p>
+<p>where <span class="math inline">\(\alpha_t = 1 - \beta_t, \quad \bar{\alpha}_t = \prod_{s=1}^{t}\alpha_s\)</span></p>
+<ul>
+<li>Reverse (Genrative) Process:</li>
+</ul>
+<p>The generative models learns to reverse this diffusion, gradually removing noise. It’s defined as:</p>
+<p><span class="math display">\[
+p_\theta(x_{t-1}|x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t))
+\]</span></p>
+<p>Diffusion models are trained by maximizing the likelihood of the observed data. However, in practice, the training often simplifies to a denoising objective:</p>
+<p><span class="math display">\[
+L(\theta) = \mathbb{E}{x_0, \epsilon, t}\left[ \|\epsilon - \epsilon\theta(\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon, t)\|^2 \right]
+\]</span></p>
+<p>The Sampling involves starting from pure noise and gradually denoising:</p>
+<p><span class="math display">\[
+x_{t-1} = \frac{1}{\sqrt{\alpha_t}}\left(x_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}t}}\epsilon\theta(x_t, t)\right) + \sqrt{\beta_t}\epsilon,\quad \epsilon\sim\mathcal{N}(0, I)
+\]</span></p>
 </section>
 <section id="combining-different-models" class="level1">
 <h1>Combining Different Models</h1>
 <section id="diffusion-models-vae" class="level2">
 <h2 class="anchored" data-anchor-id="diffusion-models-vae">Diffusion Models + VAE</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-2.png" class="img-fluid figure-img"></p>
+<figcaption>The Architecture of the Stable Diffusion Models (Image Source: High-Resolution Image Synthesis with Latent Diffusion Models)</figcaption>
+</figure>
+</div>
+<p>One limitation of the diffusion models, it need to go through many steps on the high-dimensional space. If we can train an model on the lower dimension and recover it back to the high dimension, than we can speed up both training and generating process. As proposed in <span class="citation" data-cites="rombachHighResolutionImageSynthesis2022">(<a href="#ref-rombachHighResolutionImageSynthesis2022" role="doc-biblioref">Rombach et al. 2022</a>)</span>, the Latent Diffusion Model is one of those approach. It leverages latent diffusion techniques, making it computationally efficient and capable of generating diverse, photorealistic, and detailed visuals from textual prompts. Widely adopted for its open-source accessibility, Stable Diffusion enables artists, researchers, and developers to produce remarkable content easily.</p>
 </section>
 <section id="auto-regressive-vae" class="level2">
 <h2 class="anchored" data-anchor-id="auto-regressive-vae">Auto-Regressive + VAE</h2>
@@ -425,19 +510,24 @@ P_\theta(\mathrm{x}) = \prod_{t=1}^T P_\theta(x_t | x_{&lt;t})
 </section>
 <section id="vae-gan" class="level2">
 <h2 class="anchored" data-anchor-id="vae-gan">VAE + GAN</h2>
+<p>As metioned in the paper <span class="citation" data-cites="larsenAutoencodingPixelsUsing2016">(<a href="#ref-larsenAutoencodingPixelsUsing2016" role="doc-biblioref">Larsen et al. 2016</a>)</span></p>
 </section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>In the blog, we has explore go through several generative models. We explore why we need generative models. For different purposes, we can different choice of the models. On the other hand, we can combine different models to get better performance. There are still more room for the generative models.</p>
+<p>In the blog, we has explore go through several generative models. We explore why we need generative models. For different purposes, we can different choice of the models. On the other hand, we can combine different models to get better performance. There are still more room for the generative models.<br>
+</p>
 
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-daoFlashAttention2FasterAttention2023a" class="csl-entry" role="listitem">
-Dao, Tri. 2023. <span>“<span>FlashAttention-2</span>: <span>Faster Attention</span> with <span>Better Parallelism</span> and <span>Work Partitioning</span>.”</span> July 17, 2023. <a href="https://doi.org/10.48550/arXiv.2307.08691">https://doi.org/10.48550/arXiv.2307.08691</a>.
+<div id="ref-larsenAutoencodingPixelsUsing2016" class="csl-entry" role="listitem">
+Larsen, Anders Boesen Lindbo, Søren Kaae Sønderby, Hugo Larochelle, and Ole Winther. 2016. <span>“Autoencoding Beyond Pixels Using a Learned Similarity Metric.”</span> February 10, 2016. <a href="https://doi.org/10.48550/arXiv.1512.09300">https://doi.org/10.48550/arXiv.1512.09300</a>.
+</div>
+<div id="ref-rombachHighResolutionImageSynthesis2022" class="csl-entry" role="listitem">
+Rombach, Robin, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer. 2022. <span>“High-<span>Resolution Image Synthesis</span> with <span>Latent Diffusion Models</span>.”</span> April 13, 2022. <a href="https://doi.org/10.48550/arXiv.2112.10752">https://doi.org/10.48550/arXiv.2112.10752</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

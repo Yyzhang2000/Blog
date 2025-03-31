@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="This page contains all the projects I have done during my learning process. I hope you can find something useful here. HAPPY LEARNING😁😁!!!">
+<meta name="author" content="Yuyang Zhang">
+<meta name="dcterms.date" content="2025-03-31">
+<meta name="description" content="Embark on a comprehensive exploration of neural networks, the backbone of modern artificial intelligence. This blog post delves into fundamental concepts, including architecture, training algorithms, and essential mathematics. It also covers popular network types—such as CNNs, RNNs, and Transformers—and provides insights into their applications, limitations, and recent innovations. Whether you’re a beginner eager to grasp foundational ideas or an experienced practitioner seeking deeper understanding, this deep dive offers valuable perspectives to enhance your neural network journey.">
 
-<title>Projects</title>
+<title>A Deep Dive into Neural Network</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,27 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="././icon.avif" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-28147fb08e7b933bb875f987410a5b55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f122c13e66b31791eb92fc8690c909d6.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././icon.avif" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-28147fb08e7b933bb875f987410a5b55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f122c13e66b31791eb92fc8690c909d6.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,71 +72,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-title','listing-author','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link href="https://fonts.cdnfonts.com/css/cmu-sans-serif" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="style/styles.css">
-<meta property="og:title" content="Projects">
-<meta property="og:description" content="This page contains all the projects I have done during my learning process. I hope you can find something useful here. HAPPY LEARNING😁😁!!!">
-<meta property="og:image" content="./projects/images/moe.png">
+<link rel="stylesheet" href="../style/styles.css">
+<meta property="og:title" content="A Deep Dive into Neural Network">
+<meta property="og:description" content="Embark on a comprehensive exploration of neural networks, the backbone of modern artificial intelligence. This blog post delves into fundamental concepts, including architecture, training algorithms, and essential mathematics. It also covers popular network types—such as CNNs, RNNs, and Transformers—and provides insights into their applications, limitations, and recent innovations. Whether you’re a beginner eager to grasp foundational ideas or an experienced practitioner seeking deeper understanding, this deep dive offers valuable perspectives to enhance your neural network journey.">
+<meta property="og:image" content="images/genAI.png">
 </head>
 
 <body class="floating nav-fixed">
@@ -152,21 +94,21 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resource.html"> 
+    <a class="nav-link" href="../resource.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item compact">
@@ -188,32 +130,101 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#neural-network-architecture" id="toc-neural-network-architecture" class="nav-link active" data-scroll-target="#neural-network-architecture">Neural Network Architecture</a>
+  <ul class="collapse">
+  <li><a href="#multiple-layer-percepton" id="toc-multiple-layer-percepton" class="nav-link" data-scroll-target="#multiple-layer-percepton">Multiple Layer Percepton</a></li>
+  <li><a href="#convolution-neural-network" id="toc-convolution-neural-network" class="nav-link" data-scroll-target="#convolution-neural-network">Convolution Neural Network</a></li>
+  <li><a href="#recurrent-neural-network" id="toc-recurrent-neural-network" class="nav-link" data-scroll-target="#recurrent-neural-network">Recurrent Neural Network</a></li>
+  <li><a href="#transformer-neural-network" id="toc-transformer-neural-network" class="nav-link" data-scroll-target="#transformer-neural-network">Transformer Neural Network</a></li>
+  <li><a href="#mamba" id="toc-mamba" class="nav-link" data-scroll-target="#mamba">Mamba</a></li>
+  </ul></li>
+  <li><a href="#nerual-network-components" id="toc-nerual-network-components" class="nav-link" data-scroll-target="#nerual-network-components">Nerual Network Components</a>
+  <ul class="collapse">
+  <li><a href="#activation-functions" id="toc-activation-functions" class="nav-link" data-scroll-target="#activation-functions">Activation Functions</a></li>
+  <li><a href="#normalizations" id="toc-normalizations" class="nav-link" data-scroll-target="#normalizations">Normalizations</a>
+  <ul class="collapse">
+  <li><a href="#batch-normalization" id="toc-batch-normalization" class="nav-link" data-scroll-target="#batch-normalization">Batch Normalization</a></li>
+  <li><a href="#layer-normalization" id="toc-layer-normalization" class="nav-link" data-scroll-target="#layer-normalization">Layer Normalization</a></li>
+  <li><a href="#rms-normalization" id="toc-rms-normalization" class="nav-link" data-scroll-target="#rms-normalization">RMS Normalization</a></li>
+  </ul></li>
+  <li><a href="#dropout" id="toc-dropout" class="nav-link" data-scroll-target="#dropout">Dropout</a></li>
+  <li><a href="#residual-connection" id="toc-residual-connection" class="nav-link" data-scroll-target="#residual-connection">Residual Connection</a></li>
+  </ul></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a>
+  <ul class="collapse">
+  <li><a href="#maximum-likelihood-learning" id="toc-maximum-likelihood-learning" class="nav-link" data-scroll-target="#maximum-likelihood-learning">Maximum Likelihood Learning</a></li>
+  <li><a href="#loss-function" id="toc-loss-function" class="nav-link" data-scroll-target="#loss-function">Loss Function</a></li>
+  <li><a href="#gradient-descent" id="toc-gradient-descent" class="nav-link" data-scroll-target="#gradient-descent">Gradient Descent</a></li>
+  <li><a href="#auto-differentiate" id="toc-auto-differentiate" class="nav-link" data-scroll-target="#auto-differentiate">Auto-Differentiate</a>
+  <ul class="collapse">
+  <li><a href="#stochastic-gradient-descent" id="toc-stochastic-gradient-descent" class="nav-link" data-scroll-target="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
+  <li><a href="#adam" id="toc-adam" class="nav-link" data-scroll-target="#adam">Adam</a></li>
+  </ul></li>
+  <li><a href="#weight-decay" id="toc-weight-decay" class="nav-link" data-scroll-target="#weight-decay">Weight Decay</a></li>
+  <li><a href="#early-stopping" id="toc-early-stopping" class="nav-link" data-scroll-target="#early-stopping">Early Stopping</a></li>
+  <li><a href="#parameter-initialization" id="toc-parameter-initialization" class="nav-link" data-scroll-target="#parameter-initialization">Parameter Initialization</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a>
+  <ul class="collapse">
+  <li><a href="#computer-vision" id="toc-computer-vision" class="nav-link" data-scroll-target="#computer-vision">Computer Vision</a></li>
+  <li><a href="#natural-language-processing" id="toc-natural-language-processing" class="nav-link" data-scroll-target="#natural-language-processing">Natural Language Processing</a></li>
+  <li><a href="#deep-reinforcement-learning" id="toc-deep-reinforcement-learning" class="nav-link" data-scroll-target="#deep-reinforcement-learning">Deep Reinforcement Learning</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RGlmZnVzaW9uJTIwTW9kZWw=">Diffusion Model <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VuZXJhdGl2ZSUyME1vZGVs">Generative Model <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGFyZ2UlMjBMYW5ndWFnZSUyME1vZGVs">Large Language Model <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TXVsdGklMjBNb2RhbA==">Multi Modal <span class="quarto-category-count">(1)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title"><strong>A Deep Dive into Neural Network</strong></h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Overview</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    <p>This page contains all the projects I have done during my learning process. I hope you can find something useful here. HAPPY LEARNING😁😁!!!</p>
+    Embark on a comprehensive exploration of neural networks, the backbone of modern artificial intelligence. This blog post delves into fundamental concepts, including architecture, training algorithms, and essential mathematics. It also covers popular network types—such as CNNs, RNNs, and Transformers—and provides insights into their applications, limitations, and recent innovations. Whether you’re a beginner eager to grasp foundational ideas or an experienced practitioner seeking deeper understanding, this deep dive offers valuable perspectives to enhance your neural network journey.
   </div>
 </div>
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yuyang Zhang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-03-31</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Last modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2025-03-31</p>
+    </div>
+  </div>
     
   </div>
   
@@ -222,77 +233,103 @@ window.Quarto = {
 </header>
 
 
+<p>Neural Network, as the core of the Deep Learning, deserve all the attention at it. It is the backbone of the most AI work nowadays. In the blog, we are going to dive into the Neural Networks, and the most common and useful components in the neural network, such as different activation functions, regulirazation techniques, different architecture of neural networks, and the optimization algorithms to optimize the parameters of the neural network. Besides, we are also going to see some applications of the neural networks in different field, such as computer vision, natural language processing, and reinforcement learning.</p>
+<section id="neural-network-architecture" class="level1">
+<h1>Neural Network Architecture</h1>
+<section id="multiple-layer-percepton" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-layer-percepton">Multiple Layer Percepton</h2>
+<p>The most simple form of the neural network.</p>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
+</section>
+<section id="convolution-neural-network" class="level2">
+<h2 class="anchored" data-anchor-id="convolution-neural-network">Convolution Neural Network</h2>
+<p><img src="https://miro.medium.com/v2/resize:fit:990/0*7aCR1zk6qg8Ox7cT.png" class="img-fluid"></p>
+</section>
+<section id="recurrent-neural-network" class="level2">
+<h2 class="anchored" data-anchor-id="recurrent-neural-network">Recurrent Neural Network</h2>
+</section>
+<section id="transformer-neural-network" class="level2">
+<h2 class="anchored" data-anchor-id="transformer-neural-network">Transformer Neural Network</h2>
+</section>
+<section id="mamba" class="level2">
+<h2 class="anchored" data-anchor-id="mamba">Mamba</h2>
+</section>
+</section>
+<section id="nerual-network-components" class="level1">
+<h1>Nerual Network Components</h1>
+<p>In the above sections, we have introduced the basic architecture of the neural network, different architecture has different purpose. In this section, we are going to discuss the different components inside the neural network.</p>
+<section id="activation-functions" class="level2">
+<h2 class="anchored" data-anchor-id="activation-functions">Activation Functions</h2>
+</section>
+<section id="normalizations" class="level2">
+<h2 class="anchored" data-anchor-id="normalizations">Normalizations</h2>
+<section id="batch-normalization" class="level3">
+<h3 class="anchored" data-anchor-id="batch-normalization">Batch Normalization</h3>
+</section>
+<section id="layer-normalization" class="level3">
+<h3 class="anchored" data-anchor-id="layer-normalization">Layer Normalization</h3>
+</section>
+<section id="rms-normalization" class="level3">
+<h3 class="anchored" data-anchor-id="rms-normalization">RMS Normalization</h3>
+</section>
+</section>
+<section id="dropout" class="level2">
+<h2 class="anchored" data-anchor-id="dropout">Dropout</h2>
+</section>
+<section id="residual-connection" class="level2">
+<h2 class="anchored" data-anchor-id="residual-connection">Residual Connection</h2>
+</section>
+</section>
+<section id="optimization" class="level1">
+<h1>Optimization</h1>
+<p>Optimization in the neural network means learning the parameters that will produce a expected output, when we give input. So, we need a way to learn the “best” parameters. The first steps to change parameters to a better position is knowing how the performance we are currently are. This is the job of the loss function. Let’s discuss the loss function.</p>
+<section id="maximum-likelihood-learning" class="level2">
+<h2 class="anchored" data-anchor-id="maximum-likelihood-learning">Maximum Likelihood Learning</h2>
+</section>
+<section id="loss-function" class="level2">
+<h2 class="anchored" data-anchor-id="loss-function">Loss Function</h2>
+</section>
+<section id="gradient-descent" class="level2">
+<h2 class="anchored" data-anchor-id="gradient-descent">Gradient Descent</h2>
+</section>
+<section id="auto-differentiate" class="level2">
+<h2 class="anchored" data-anchor-id="auto-differentiate">Auto-Differentiate</h2>
+<section id="stochastic-gradient-descent" class="level3">
+<h3 class="anchored" data-anchor-id="stochastic-gradient-descent">Stochastic Gradient Descent</h3>
+</section>
+<section id="adam" class="level3">
+<h3 class="anchored" data-anchor-id="adam">Adam</h3>
+</section>
+</section>
+<section id="weight-decay" class="level2">
+<h2 class="anchored" data-anchor-id="weight-decay">Weight Decay</h2>
+</section>
+<section id="early-stopping" class="level2">
+<h2 class="anchored" data-anchor-id="early-stopping">Early Stopping</h2>
+</section>
+<section id="parameter-initialization" class="level2">
+<h2 class="anchored" data-anchor-id="parameter-initialization">Parameter Initialization</h2>
+</section>
+</section>
+<section id="applications" class="level1">
+<h1>Applications</h1>
+<section id="computer-vision" class="level2">
+<h2 class="anchored" data-anchor-id="computer-vision">Computer Vision</h2>
+</section>
+<section id="natural-language-processing" class="level2">
+<h2 class="anchored" data-anchor-id="natural-language-processing">Natural Language Processing</h2>
+</section>
+<section id="deep-reinforcement-learning" class="level2">
+<h2 class="anchored" data-anchor-id="deep-reinforcement-learning">Deep Reinforcement Learning</h2>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGFyZ2UlMjBMYW5ndWFnZSUyME1vZGVs" data-listing-file-modified-sort="1743344477000" data-listing-reading-time-sort="2" data-listing-word-count-sort="228">
-<a href="./projects/MoE.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/images/moe.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<strong>Training a Mixture of Expert LLM</strong>
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TGFyZ2UlMjBMYW5ndWFnZSUyME1vZGVs'); return false;">
-Large Language Model
-</div>
-</div>
-<div class="card-text listing-description">
-Dive into the fascinating world of Mixture of Experts (MoE) models! Learn how training large language models (LLMs) with specialized ‘experts’ enhances performance…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Yuyang Zhang
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="R2VuZXJhdGl2ZSUyME1vZGVsJTJDRGlmZnVzaW9uJTIwTW9kZWwlMkNNdWx0aSUyME1vZGFs" data-listing-file-modified-sort="1743040597000" data-listing-reading-time-sort="1" data-listing-word-count-sort="60">
-<a href="./projects/StableDiffusion.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/images/sd.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<strong>Stable Diffusion From Scratch with Fine Tuning</strong>
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R2VuZXJhdGl2ZSUyME1vZGVs'); return false;">
-Generative Model
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('RGlmZnVzaW9uJTIwTW9kZWw='); return false;">
-Diffusion Model
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TXVsdGklMjBNb2RhbA=='); return false;">
-Multi Modal
-</div>
-</div>
-<div class="card-text listing-description">
-In this blog, I am going to summary the 5 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model.…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Yuyang Zhang
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -546,6 +583,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           if (link.getAttribute("rel") === null) {
             link.setAttribute("rel", "noopener");
           }
+          // default icon
+          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
