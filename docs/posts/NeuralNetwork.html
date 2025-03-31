@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link href="https://fonts.cdnfonts.com/css/cmu-sans-serif" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../style/styles.css">
 <meta property="og:title" content="A Deep Dive into Neural Network">
@@ -160,7 +189,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a>
   <ul class="collapse">
   <li><a href="#maximum-likelihood-learning" id="toc-maximum-likelihood-learning" class="nav-link" data-scroll-target="#maximum-likelihood-learning">Maximum Likelihood Learning</a></li>
-  <li><a href="#loss-function" id="toc-loss-function" class="nav-link" data-scroll-target="#loss-function">Loss Function</a></li>
+  <li><a href="#loss-function" id="toc-loss-function" class="nav-link" data-scroll-target="#loss-function">Loss Function</a>
+  <ul class="collapse">
+  <li><a href="#mean-square-loss" id="toc-mean-square-loss" class="nav-link" data-scroll-target="#mean-square-loss">Mean Square Loss</a></li>
+  <li><a href="#cross-entropy-loss" id="toc-cross-entropy-loss" class="nav-link" data-scroll-target="#cross-entropy-loss">Cross Entropy Loss</a></li>
+  <li><a href="#kl-loss" id="toc-kl-loss" class="nav-link" data-scroll-target="#kl-loss">KL Loss</a></li>
+  <li><a href="#auxiliary-loss" id="toc-auxiliary-loss" class="nav-link" data-scroll-target="#auxiliary-loss">Auxiliary Loss</a></li>
+  </ul></li>
   <li><a href="#gradient-descent" id="toc-gradient-descent" class="nav-link" data-scroll-target="#gradient-descent">Gradient Descent</a></li>
   <li><a href="#auto-differentiate" id="toc-auto-differentiate" class="nav-link" data-scroll-target="#auto-differentiate">Auto-Differentiate</a>
   <ul class="collapse">
@@ -288,6 +323,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="loss-function" class="level2">
 <h2 class="anchored" data-anchor-id="loss-function">Loss Function</h2>
+<section id="mean-square-loss" class="level3">
+<h3 class="anchored" data-anchor-id="mean-square-loss">Mean Square Loss</h3>
+<p>This is the one of the most common loss function in the Deep Learning. This loss function is used for the continuous values. Mathematically, it express as:</p>
+<p><span class="math display">\[
+\mathcal{L}(\theta) =  \mathbb{E}[\|\hat{y} - y \|^2]
+\]</span></p>
+</section>
+<section id="cross-entropy-loss" class="level3">
+<h3 class="anchored" data-anchor-id="cross-entropy-loss">Cross Entropy Loss</h3>
+<p>This is another loss function for the discrete values, for example for the Classification problems. Even LLM, which has a huge number of parameters, in the pre-training stage, the loss function is just a simply Cross entropy loss.</p>
+</section>
+<section id="kl-loss" class="level3">
+<h3 class="anchored" data-anchor-id="kl-loss">KL Loss</h3>
+<p>This on is also common in the neural network. When the neural network act like the probability density function, this loss is used to measure how to different neural network are.</p>
+</section>
+<section id="auxiliary-loss" class="level3">
+<h3 class="anchored" data-anchor-id="auxiliary-loss">Auxiliary Loss</h3>
+</section>
 </section>
 <section id="gradient-descent" class="level2">
 <h2 class="anchored" data-anchor-id="gradient-descent">Gradient Descent</h2>
