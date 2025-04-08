@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yuyang Zhang">
-<meta name="dcterms.date" content="2025-03-31">
+<meta name="dcterms.date" content="2025-04-08">
 <meta name="description" content="In this blog, I am going to summary the 6 most common generative models: Auto-Regreesive Model, Variational AutoEncoder, Engery Based Model, Flow Model and Diffusion Model. I will also display the pros and cons between different models, and how we can combine those models to get better performance">
 
 <title>What a Generative Models?</title>
@@ -189,8 +189,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#what-is-the-generative-models-and-generative-ai" id="toc-what-is-the-generative-models-and-generative-ai" class="nav-link active" data-scroll-target="#what-is-the-generative-models-and-generative-ai">What is the Generative Models and Generative AI?</a></li>
+  <li><a href="#maximum-likelihood-learning" id="toc-maximum-likelihood-learning" class="nav-link" data-scroll-target="#maximum-likelihood-learning">Maximum Likelihood Learning</a></li>
   <li><a href="#auto-regressive-models" id="toc-auto-regressive-models" class="nav-link" data-scroll-target="#auto-regressive-models">Auto-Regressive Models</a></li>
-  <li><a href="#variational-autoencoder-models" id="toc-variational-autoencoder-models" class="nav-link" data-scroll-target="#variational-autoencoder-models">Variational AutoEncoder Models</a></li>
+  <li><a href="#variational-autoencoder-models" id="toc-variational-autoencoder-models" class="nav-link" data-scroll-target="#variational-autoencoder-models">Variational AutoEncoder Models</a>
+  <ul class="collapse">
+  <li><a href="#reparameterization-trick" id="toc-reparameterization-trick" class="nav-link" data-scroll-target="#reparameterization-trick">Reparameterization trick</a></li>
+  </ul></li>
   <li><a href="#generative-adversarial-networks" id="toc-generative-adversarial-networks" class="nav-link" data-scroll-target="#generative-adversarial-networks">Generative Adversarial Networks</a></li>
   <li><a href="#energy-based-models" id="toc-energy-based-models" class="nav-link" data-scroll-target="#energy-based-models">Energy-Based Models</a></li>
   <li><a href="#flow-based-models" id="toc-flow-based-models" class="nav-link" data-scroll-target="#flow-based-models">Flow-Based Models</a></li>
@@ -243,14 +247,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-03-31</p>
+      <p class="date">2025-04-08</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Last modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-03-31</p>
+      <p class="date-modified">2025-04-08</p>
     </div>
   </div>
     
@@ -263,7 +267,7 @@ window.Quarto = {
 
 <section id="what-is-the-generative-models-and-generative-ai" class="level1">
 <h1>What is the Generative Models and Generative AI?</h1>
-<p>Generative models, as the name indicated, are models that can <em>generative</em> new content. Unlike <strong>discriminate models</strong>, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because: <span class="citation" data-cites="at">(<a href="#ref-at" role="doc-biblioref"><strong>at?</strong></a>)</span></p>
+<p>Generative models, as the name indicated, are models that can <em>generative</em> new content. Unlike <strong>discriminate models</strong>, the generative models are sometime hard to train. But why we need generative models in the first place? We want generative models because:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Density_estimation">Density Estimation</a>: Estimate the probability density function of the data.</li>
 <li><a href="https://en.wikipedia.org/wiki/Anomaly_detection">Anomaly Detection</a>: Detect the anomaly data points.</li>
@@ -340,6 +344,94 @@ Note
 </div>
 </div>
 </section>
+<section id="maximum-likelihood-learning" class="level1">
+<h1>Maximum Likelihood Learning</h1>
+<div id="fig-mle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://noblecatt-1304922865.cos.ap-singapore.myqcloud.com/202504082033591.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Compare modelled distribution with true distribution (Image Source: Stanford CS236 Deep Generative)
+</figcaption>
+</figure>
+</div>
+<p>The purpose of the most generative models is to learn the probability distribution <span class="math inline">\(P_\theta\)</span> that is close to the true distribution <span class="math inline">\(P_\text{data}\)</span> which we don’t know. There are different form of the <span class="math inline">\(P_\theta\)</span>, how do we choose the “best” model to represent the <span class="math inline">\(P_\text{data}\)</span>. We can use the Kullback-Leibler divergence (KL-divergence) between two distribution to measure how different those two distributions are. The KL-Divergence is defined as:</p>
+<p><span id="eq-kl-divergence"><span class="math display">\[
+\begin{split}D_{KL} (P\| Q ) &amp; = \mathbb{E}_{P}\left[ \log \frac{P(x)}{Q(x)} \right]  \\&amp; = \mathbb{E}_{P}[\log P(x)] - \mathbb{E}_{P}[\log Q(x)]\end{split}
+\tag{1}\]</span></span></p>
+<p>Two of the good property of the KL-Divergence are:</p>
+<ul>
+<li><span class="math inline">\(D_{KL} \geq 0\)</span>: when <span class="math inline">\(Q = P\)</span> we can get the equal</li>
+<li><span class="math inline">\(\mathbb{E}_{P}\left[ - \log \frac{Q}{P} \right] \geq -\log \mathbb{E}_{P}\left[ \frac{Q}{P} \right]\)</span>: due to the<a href="https://en.wikipedia.org/wiki/Jensen%27s_inequality">Jensen’s inequality</a> and <span class="math inline">\(-\log\)</span> is the convex function.</li>
+</ul>
+<p>So, we can measure how the <span class="math inline">\(P_{\text{data}}\)</span> and <span class="math inline">\(P_{\theta}\)</span> are different:</p>
+<p><span id="eq-kl-of-two-model-and-true"><span class="math display">\[
+\begin{split}D_{KL}(P_{\text{data}} \| P_{\theta}) &amp; = \mathbb{E}_{x \sim P_{\text{data}}} \left[ \log \frac{P_{data}(x)}{P_{\theta}(x)} \right] \\ &amp;=   \mathbb{E}_{x \sim P_{\text{data}}} [\log P_{\text{data}}(x)] - \textcolor{green}{\mathbb{E}_{x \sim P_{\text{data}}} [\log P_{\theta}(x)]}\\\end{split}
+\tag{2}\]</span></span></p>
+<p>As we can see, the first term is not related to the <span class="math inline">\(\theta\)</span>, which means const across all the models and we don’t know the value. We only need to <strong>maximizing</strong> the <span class="math inline">\(\textcolor{green}{\mathbb{E}_{x \sim P_{\text{data}}} [\log P_{\theta}(x)]}\)</span> in order to minimizing the <span class="math inline">\(D_{KL}\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notes that, although we can compare models, we are still not know how close we are to the true distribution <span class="math inline">\(P_{\text{data}}\)</span>.</p>
+</div>
+</div>
+<p>How to calculate <span class="math inline">\(\mathbb{E}_{x \sim P_{\text{data}}} [\log P_{\theta}(x)]\)</span>, one way is to <u>approximate the expected log-likelihood with empirical log-likelihood</u>: <span class="math display">\[
+\mathbb{E}_{x \sim P_{\text{data}}} [\log P_{\theta}(x)] \approx \mathbb{E}_{\mathcal{D}}[\log P_{\theta}(x)]  
+= \frac{1}{|\mathcal{D}|} \sum_{x \in \mathcal{D}} \log P_{\theta}(x)
+\]</span></p>
+<p>So, the maximum likelihood learning become: <span class="math display">\[
+\underset{P_{\theta}}{\max}  \frac{1}{|\mathcal{D}|} \sum_{x \in \mathcal{D}} \log P_{\theta}(x)
+\]</span></p>
+<p>The maximum of the likelihood function is equal to minimizing the <strong>negative log-likelihood(NLL)</strong>: <span class="math display">\[
+\underset{P_{\theta}}{\max}  \frac{1}{|\mathcal{D}|} \sum_{x \in \mathcal{D}} \log P_{\theta}(x)   
+\quad \Longleftrightarrow \quad
+\underset{P_{\theta}}{\min} \frac{1}{|\mathcal{D}|} \sum_{x \in \mathcal{D}} -\log P_{\theta}(x)
+\]</span> So, the loss function is: <span class="math display">\[
+\mathcal{L}(\theta) = \frac{1}{|\mathcal{D}|} \sum_{x \in \mathcal{D}} -\log P_{\theta}(x)
+\]</span></p>
+<p>Depending on what form&nbsp; <span class="math inline">\(p_\theta(x)\)</span>&nbsp; takes, this NLL simplifies into familiar losses like <strong>MSE</strong> or <strong>CrossEntropy</strong>.</p>
+<p>When translating the above mathematical formulation into code, we commonly used some form:</p>
+<ul>
+<li>Mean Squared Loss (MSE): Diffusion Models</li>
+<li>Cross-Entropy Loss: GAN(Binary Cross Entropy)</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why we can convert MLE to loss fucn
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Assume the model outputs the <strong>mean</strong> of a Gaussian distribution: <span class="math display">\[p_\theta(x) = \mathcal{N}(x; \mu_\theta, \sigma^2 I)\]</span> Then the log-likelihood is: <span class="math display">\[\log p_\theta(x) = -\frac{1}{2\sigma^2} \|x - \mu_\theta\|^2 + \text{const}\]</span> So the <strong>negative log-likelihood</strong> becomes: <span class="math display">\[-\log p_\theta(x) = \frac{1}{2\sigma^2} \|x - \mu_\theta\|^2 + \text{const}\]</span></p>
+<p>One of the problem with the MLE is that, it can easily overfit the data, that means it might not generalize well on the un-seen data set. There are several way to avoid the overfitting:</p>
+<ul>
+<li>Hard Constraints: limit the choice of the NN</li>
+<li>Soft preference for “Simpler” Models</li>
+<li>Augment the objective function with regularization</li>
+</ul>
+<p><span class="math display">\[
+\text{obj}(x, \mathcal{M}) = \text{loss}(x, \mathcal{M}) + R(\mathcal{M})
+\]</span></p>
+<ul>
+<li>Evaluate generalization performance on a held-out validation set.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section id="auto-regressive-models" class="level1">
 <h1>Auto-Regressive Models</h1>
 <div>
@@ -391,6 +483,29 @@ P_\theta(\mathrm{x}) = \prod_{t=1}^T P_\theta(x_t | x_{&lt;t})
 \]</span></p>
 </div>
 <p><a href="https://mlarchive.com/wp-content/uploads/2022/09/New-Project-3.png" class="uri">https://mlarchive.com/wp-content/uploads/2022/09/New-Project-3.png</a></p>
+<p>The VAE model we are going to introduce is the Variational AutoEncoder. The original VAE objective (ELBO) is derived from MLE.</p>
+<p><span class="math display">\[
+\begin{split}\log p(x) &amp;= \log \int p(x, z) \, dz \\&amp;= \log  \int \textcolor{green}{\frac{q(z|x)}{q(z|x)}} p(x, z) \, dz  \\&amp;=  \log \mathbb{E}_{\textcolor{green}{q(z|x)}}\left[ \frac{p(x,z)}{\textcolor{green}{q(z|x)}} \right] \\ &amp;\geq  \mathbb{E}_{\textcolor{green}{q(z|x)}}\left[ \log \frac{p(x,z)}{\textcolor{green}{q(z|x)}} \right]  &amp;&amp; \text{(Jensen's Inequality)}\\ &amp; =\underbrace{ \mathbb{E}_{\textcolor{green}{q(z|x)}}[\log p(x, z) -  \log\textcolor{green}{q(z|x)}] }_{ ELBO } \\&amp;=  \mathbb{E}_{\textcolor{green}{q(z|x)}}[\log p(x |z) +\log p(z) - \log (\textcolor{green}{q(z |x)})] \\ &amp;=  \mathbb{E}_{\textcolor{green}{q(z|x)}}[\log p(x|z)]   - \mathbb{E}_{\textcolor{green}{q(z|x)}}\left[ \log \frac{\textcolor{green}{q(z|x)}}{p(x)} \right] \\ &amp;=  \mathbb{E}_{\textcolor{green}{q(z|x)}}[\log p(x|z)]  - D_{KL}(\textcolor{green}{q(z |x)} \| p(z)  ) \\\end{split}
+\]</span></p>
+<p>Since the <span class="math inline">\(\textcolor{green}{q(z|x)}\)</span> is intractable because of the high dimension, we use another function to <em>approximate</em> it. Same for the <span class="math inline">\(p(x | z)\)</span>. So, the MLE object become:</p>
+<p><span class="math display">\[
+\begin{align} &amp;\max \quad  \mathbb{E}_{\textcolor{green}{q(z|x)}}[\log p(x|z)]  - D_{KL}(\textcolor{green}{q(z |x)} \| p(z)  )  \\  \implies &amp;\min_{\theta,\phi} \quad -\mathbb{E}{q_{\phi}(z|x)}[\log p_{\theta}(x|z)] + D_{\text{KL}}(q_{\phi}(z|x)\|p(z))\end{align}
+\]</span></p>
+<p>The <span class="math inline">\(p(z)\)</span> is the prior distribution of latent variable is usually as MultiVariate Gaussian Distribution. However, we can set more fancy and complex distribution as the prior distribution.</p>
+<p>There are several tricks used during the training of VAE, the first one is the reparameterization tirck.</p>
+<section id="reparameterization-trick" class="level2">
+<h2 class="anchored" data-anchor-id="reparameterization-trick">Reparameterization trick</h2>
+<p>We can use the Monte Carlo Method to evaluate the ELBO <span class="math display">\[
+\quad -\mathbb{E}{q_{\phi}(z|x)}[\log p_{\theta}(x|z)] + D_{\text{KL}}(q_{\phi}(z|x)\|p(z)) \approx \log p_{\theta}(x | z_{1})z_{1} + \text{Const}
+\]</span> However, the <span class="math inline">\(z_{1}\)</span> is sampled from the a Gaussian Distribution with <span class="math inline">\(\mu, \sigma\)</span> calculated from <span class="math inline">\(q_{\phi}(z |x)\)</span>, which mean the gradient information which used to update the parameters cannot flow through this node because of the randomness. Is there are other way to remove the randomness from the loss function? This, that’s reparameterization trick do. Instead of sampling <span class="math inline">\(z\)</span> from <span class="math inline">\(q_{\phi}(z |x)\)</span>, we:</p>
+<ol type="1">
+<li>Sample <span class="math inline">\(\epsilon\)</span> from a fixed, parameter-free distribution (e.g.&nbsp;Normal Distribution)</li>
+<li>Use a deterministic function of that sample and the parameters to get <span class="math inline">\(z = f(\epsilon)\)</span></li>
+</ol>
+<p><img src="https://dilithjay.com/assets/images/reparam-trick.png" class="img-fluid"></p>
+<p>So the model become</p>
+<p><img src="https://dilithjay.com/assets/images/vae-reparam.png" class="img-fluid"></p>
+</section>
 </section>
 <section id="generative-adversarial-networks" class="level1">
 <h1>Generative Adversarial Networks</h1>

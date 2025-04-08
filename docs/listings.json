@@ -50,20 +50,21 @@
     "listing": "/projects.html",
     "items": [
       "/projects/MoE.html",
-      "/projects/StableDiffusion.html"
+      "/projects/StableDiffusion.html",
+      "/projects/VLM.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
       "/posts/Attentions.html",
+      "/posts/Generative Model/Generative Model Overview.html",
       "/posts/LLM/LLM-PreTraining.html",
       "/posts/LLM/LLM-PostTraining.html",
       "/posts/LLM/LLM-Overview.html",
       "/posts/LLM/LLM-Applications.html",
       "/posts/MathToolBox.html",
       "/posts/NeuralNetwork.html",
-      "/posts/Generative Model/Generative Model Overview.html",
       "/posts/Rl.html",
       "/posts/RLHF.html",
       "/posts/Generative Model/VAE.html",
